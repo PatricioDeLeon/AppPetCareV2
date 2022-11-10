@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileScreens.EditUserFragment"
+    android:orientation="vertical"
+    android:weightSum="20"
+
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="Edit Profile"
+        android:gravity="center"
+        android:textSize="40dp"
+        android:fontFamily="monospace"
+        android:textColor="@color/design_default_color_primary"
+        />
+
+    <EditText
+        android:hint="name"
+        android:layout_marginTop="30dp"
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+
+        />
+
+    <EditText
+        android:hint="email"
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_marginTop="30dp"
+
+        />
+
+    <EditText
+        android:hint="phone"
+        android:id="@+id/edit_phone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_marginTop="30dp"
+        />
+
+    <Button
+        android:id="@+id/update_user"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_margin="10dp"
+        android:text="Actualizar ahora "
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_margin="40dp"
+        android:text="Regresar"
+        />
+
+
+
+</LinearLayout>

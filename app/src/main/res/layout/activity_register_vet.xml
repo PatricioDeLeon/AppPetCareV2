@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity"
+    android:weightSum="10"
+    >
+
+    <TextView
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="REGISTRATE COMO VET"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:padding="10dp"
+        android:weightSum="10"
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:id="@+id/name_register"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Name"
+            />
+
+        <EditText
+            android:id="@+id/email_register"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Email"
+            />
+
+
+        <EditText
+            android:id="@+id/password_register"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Password"
+            />
+
+        <EditText
+            android:id="@+id/cedula_register"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Cedula"
+            />
+
+        <EditText
+            android:id="@+id/phone_register"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Phone"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:weightSum="10"
+            android:gravity="center"
+            >
+
+
+
+            <EditText
+                android:id="@+id/code_vet"
+                android:layout_marginTop="40dp"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:inputType="number"
+                android:hint="Codigo"
+                />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/btn_register_vet"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="Registrarse" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
