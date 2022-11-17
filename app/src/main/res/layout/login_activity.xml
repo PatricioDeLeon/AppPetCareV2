@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/lorange"
     android:layout_height="match_parent">
 
 
@@ -11,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pet Care Vet"
-        android:textColor="@android:color/holo_purple"
+        android:textColor="@android:color/white"
+        android:background="@color/dorange"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/email_login"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,6 +28,7 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,14 +47,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"
         android:textColor="@android:color/darker_gray"
-        android:hint="Password"/>
+        android:hint="Contraseña"/>
 
     <TextView
         android:layout_width="148dp"
         android:layout_height="20dp"
         android:text="Click si eres vet ->"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/dorange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,8 +79,10 @@
         android:layout_width="195dp"
         android:layout_height="47dp"
         android:text="Enter"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/ddorange"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_login"
@@ -86,11 +93,13 @@
         android:id="@+id/textView3"
         android:layout_width="154dp"
         android:layout_height="0dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Crear cuenta!!"
         app:layout_constraintBottom_toTopOf="@+id/goToRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
+        android:background="@color/dorange"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goToMenu" />
 
@@ -99,6 +108,7 @@
         android:layout_width="195dp"
         android:layout_height="47dp"
         android:text="Registrarse"
+        android:backgroundTint="@color/ddorange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,9 +119,11 @@
     <TextView
         android:layout_width="223dp"
         android:layout_height="29dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="100dp"
         android:gravity="center"
+        android:layout_marginTop="20dp"
         android:text="Crear cuenta como veterniario"
+        android:background="@color/dorange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -124,6 +136,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
+        android:backgroundTint="@color/ddorange"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_login"
         app:layout_constraintVertical_bias="0.843" />

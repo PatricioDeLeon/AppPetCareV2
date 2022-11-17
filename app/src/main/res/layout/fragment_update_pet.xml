@@ -7,23 +7,25 @@
     tools:context=".PetsScreens.PetsMenuActivity"
     android:orientation="vertical"
     android:weightSum="20"
+    android:background="@color/lgreen"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="30dp"
         android:layout_weight="1"
         android:weightSum="10"
         android:orientation="horizontal"
+        android:background="@color/dgreen"
         >
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="8"
-            android:text="Edit Pet"
-            android:textColor="@color/design_default_color_primary"
+            android:text="Editar Mascotas"
+            android:textColor="@color/white"
             android:gravity="center"
-            android:textSize="30dp"
+            android:textSize="28dp"
             />
 
         <TextView
@@ -31,9 +33,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Id: "
-            android:textColor="@color/design_default_color_primary"
+            android:textColor="@color/white"
             android:gravity="center"
-            android:textSize="20dp"
+            android:textSize="28dp"
             />
         <TextView
             android:id="@+id/id_pet"
@@ -62,9 +64,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="Name"
+            android:text="Nombre"
             android:gravity="center"
-            android:textColor="@color/design_default_color_primary"
+            android:textColor="@color/black"
             android:textSize="20dp"
             />
         <EditText
@@ -90,9 +92,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="Age"
+            android:text="Edad"
             android:gravity="center"
-            android:textColor="@color/design_default_color_primary"
+            android:textColor="@color/black"
             android:textSize="20dp"
             />
         <EditText
@@ -116,9 +118,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="Race"
+            android:text="Raza"
             android:gravity="center"
-            android:textColor="@color/design_default_color_primary"
+            android:textColor="@color/black"
             android:textSize="20dp"
             />
         <EditText
@@ -143,9 +145,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="Weight"
+            android:text="Peso"
             android:gravity="center"
-            android:textColor="@color/design_default_color_primary"
+            android:textColor="@color/black"
             android:textSize="20dp"
             />
         <EditText
@@ -169,9 +171,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="Add"
+            android:text="Agregar"
             android:gravity="center"
-            android:textColor="@color/design_default_color_primary"
+            android:textColor="@color/black"
             android:textSize="20dp"
             />
         <EditText
@@ -192,7 +194,10 @@
 
     <Button
         android:id="@+id/btn_update_pet"
-        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/ddgreen"
+        android:layout_width="250dp"
+        android:textSize="15dp"
         android:layout_height="0dp"
         android:layout_weight="2"
         android:layout_margin="0dp"

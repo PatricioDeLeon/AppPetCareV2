@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".RegisterActivity"
     android:weightSum="10"
+    android:background="@color/lorange"
     >
 
     <TextView
@@ -15,7 +16,8 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="REGISTRATE"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="@color/white"
+        android:background="@color/dorange"
         android:textSize="30dp" />
 
     <LinearLayout
@@ -31,7 +33,8 @@
             android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Name"
+            android:background="@color/white"
+            android:hint="Nombre"
             />
 
         <EditText
@@ -39,6 +42,7 @@
             android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:background="@color/white"
             android:hint="Email"
             />
 
@@ -47,7 +51,8 @@
             android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Password"
+            android:hint="Contraseña"
+            android:background="@color/white"
             />
 
         <EditText
@@ -55,13 +60,14 @@
             android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Phone"
+            android:hint="Teléfono"
+            android:background="@color/white"
             />
         <TextView
             android:id="@+id/response_message"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="message"
+            android:hint="Mensaje"
             android:gravity="center"
             />
 
@@ -82,6 +88,7 @@
             android:id="@+id/btn_register"
             android:layout_width="300dp"
             android:layout_height="50dp"
+            android:backgroundTint="@color/ddorange"
             android:text="Registrarse" />
     </LinearLayout>
 

@@ -6,6 +6,7 @@
     tools:context=".PetsScreens.addPet"
     android:weightSum="10"
     android:orientation="vertical"
+    android:background="@color/lpurple"
     >
 
     <!-- TODO: Update blank fragment layout -->
@@ -17,7 +18,8 @@
         android:text="Agregar mascota"
         android:textSize="30dp"
         android:gravity="center"
-        android:textColor="@color/design_default_color_primary"
+        android:textColor="@color/white"
+        android:background="@color/dpurple"
          />
 
 
@@ -25,41 +27,44 @@
             android:id="@+id/name_pet"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:hint="Name"
+            android:layout_marginTop="14dp"
+            android:hint="Nombre"
             android:layout_weight="1" />
 
         <EditText
             android:id="@+id/age_pet"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:hint="Age"
+            android:hint="Edad"
             android:layout_weight="1" />
 
         <EditText
             android:id="@+id/race_pet"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:hint="Race"
+            android:hint="Raza"
             android:layout_weight="1" />
         <EditText
             android:id="@+id/weight_pet"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:hint="weight"
+            android:hint="Peso"
             android:layout_weight="1" />
         <EditText
             android:id="@+id/additonal_pet"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:hint="Additional information"
+            android:hint="Inf.Adicional"
             android:layout_weight="1" />
 
         <Button
             android:id="@+id/btn_add_pet"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="Add pet"
+            android:text="Agregar Mascota"
             />
 
 

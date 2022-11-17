@@ -6,6 +6,7 @@
     tools:context=".PetsScreens.addPet"
     android:weightSum="10"
     android:orientation="vertical"
+    android:background="@color/lpurple"
     >
 
     <TextView
@@ -13,10 +14,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="Agregar mascota"
+        android:text="Agregar Vacuna"
         android:textSize="30dp"
         android:gravity="center"
-        android:textColor="@color/design_default_color_primary"
+        android:background="@color/dpurple"
+        android:textColor="@color/white"
         />
 
 
@@ -24,14 +26,15 @@
         android:id="@+id/name_pet"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:hint="nombre"
+        android:hint="Nombre"
+        android:layout_marginTop="40dp"
         android:layout_weight="1" />
 
     <EditText
         android:id="@+id/race_pet"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:hint="raza"
+        android:hint="Raza"
         android:layout_weight="1" />
 
     <EditText
@@ -44,7 +47,7 @@
         android:id="@+id/message_vac"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:hint="mensaje"
+        android:hint="Mensaje"
         android:layout_weight="1" />
     <EditText
         android:id="@+id/date_vac"
@@ -55,10 +58,12 @@
 
     <Button
         android:id="@+id/btn_add_vac"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="Add vaccine"
+        android:text="Agregar Vacuna"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
         />
 
 </LinearLayout>
