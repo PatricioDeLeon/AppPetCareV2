@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ProfileScreens.ProfileFragment"
     android:orientation="vertical"
+    android:background="@color/lpink"
     android:weightSum="20">
 
 
@@ -13,9 +14,12 @@
     <TextView
         android:id="@+id/email_profile"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="40dp"
         android:layout_weight="1"
         android:hint="Email"
+        android:textSize="15dp"
+        android:background="@color/dpink"
+        android:textColor="@color/white"
         android:gravity="center"
         />
 
@@ -35,10 +39,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3"
-            android:hint="name"
+            android:hint="nombre"
             android:gravity="center"
             android:layout_marginTop="50dp"
-            android:background="@color/design_default_color_primary"
             android:textColor="@color/cardview_light_background"
             />
 
@@ -50,7 +53,6 @@
             android:layout_marginTop="30dp"
             android:hint="email"
             android:gravity="center"
-            android:background="@color/design_default_color_primary"
             android:textColor="@color/cardview_light_background"
             />
 
@@ -59,10 +61,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:hint="phone"
+            android:hint="teléfono"
             android:gravity="center"
             android:layout_marginTop="30dp"
-            android:background="@color/design_default_color_primary"
             android:textColor="@color/cardview_light_background"
             />
 
@@ -70,7 +71,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="20dp"
         android:layout_weight="2"
         android:layout_marginTop="20dp"
 
@@ -78,8 +79,8 @@
         <Button
             android:id="@+id/go_to_edit_user"
             android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/ddpink"
             android:layout_marginStart="10dp"
             android:text="Editar"
             />

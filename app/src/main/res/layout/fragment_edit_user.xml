@@ -6,7 +6,7 @@
     tools:context=".ProfileScreens.EditUserFragment"
     android:orientation="vertical"
     android:weightSum="20"
-
+    android:background="@color/lpink"
     >
 
     <!-- TODO: Update blank fragment layout -->
@@ -14,15 +14,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:text="Edit Profile"
+        android:text="Editar Perfil"
         android:gravity="center"
         android:textSize="40dp"
-        android:fontFamily="monospace"
-        android:textColor="@color/design_default_color_primary"
+        android:fontFamily="@font/barlow"
+        android:textColor="@color/white"
+        android:background="@color/dpink"
         />
 
     <EditText
-        android:hint="name"
+        android:hint="Nombre"
         android:layout_marginTop="30dp"
         android:id="@+id/edit_name"
         android:layout_width="match_parent"
@@ -32,7 +33,7 @@
         />
 
     <EditText
-        android:hint="email"
+        android:hint="Email"
         android:id="@+id/edit_email"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -42,7 +43,7 @@
         />
 
     <EditText
-        android:hint="phone"
+        android:hint="Teléfono"
         android:id="@+id/edit_phone"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -52,19 +53,26 @@
 
     <Button
         android:id="@+id/update_user"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/ddpink"
         android:layout_weight="2"
+        android:layout_marginTop="20dp"
         android:layout_margin="10dp"
         android:text="Actualizar ahora "
+        android:textSize="15dp"
         />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/ddpink"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:layout_margin="40dp"
+        android:layout_margin="10dp"
         android:text="Regresar"
+        android:textSize="15dp"
         />
 
 
