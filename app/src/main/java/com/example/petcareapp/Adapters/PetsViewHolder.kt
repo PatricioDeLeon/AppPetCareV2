@@ -6,6 +6,7 @@ import com.example.petcareapp.DataClasses.DataClassPets
 import com.example.petcareapp.databinding.ItemPetBinding
 
 class PetsViewHolder(view: View):RecyclerView.ViewHolder(view) {
+
     val binding = ItemPetBinding.bind(view)
     fun render(petsDataModel:DataClassPets){
 

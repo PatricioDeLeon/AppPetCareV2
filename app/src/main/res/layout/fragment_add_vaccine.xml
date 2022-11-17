@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PetsScreens.addPet"
+    android:weightSum="10"
+    android:orientation="vertical"
+    >
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Agregar mascota"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textColor="@color/design_default_color_primary"
+        />
+
+
+    <EditText
+        android:id="@+id/name_pet"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="nombre"
+        android:layout_weight="1" />
+
+    <EditText
+        android:id="@+id/race_pet"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="raza"
+        android:layout_weight="1" />
+
+    <EditText
+        android:id="@+id/vaccine_vac"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="Tipo de vacuna"
+        android:layout_weight="1" />
+    <EditText
+        android:id="@+id/message_vac"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="mensaje"
+        android:layout_weight="1" />
+    <EditText
+        android:id="@+id/date_vac"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:hint="Fecha: YYYY/MM/DD"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btn_add_vac"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Add vaccine"
+        />
+
+</LinearLayout>

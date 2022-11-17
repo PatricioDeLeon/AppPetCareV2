@@ -29,13 +29,13 @@ class RegisterVet : AppCompatActivity() {
             val cedula = binding.cedulaRegister.text.toString()
             val phone = binding.phoneRegister.text.toString()
 
-            if(!code.isNotEmpty() || !name.isNullOrEmpty() || !email.isNullOrEmpty() || !password.isNullOrEmpty() || !cedula.isNotEmpty() || !phone.isNullOrEmpty()){
+            if(!name.isNullOrEmpty() || !email.isNullOrEmpty() || !password.isNullOrEmpty() || !cedula.isNotEmpty() || !phone.isNullOrEmpty() || code.isNotEmpty()){
 
 
 
                 CoroutineScope(Dispatchers.IO).launch {
                     val registerRepo = RegisterRepository()
-                    val res = registerRepo.registerVet(name,email,password,cedula, phone)
+                    val res = registerRepo.registerVet(name,email,password,cedula, phone, code)
 
                     if(res == "true"){
                         runOnUiThread{
@@ -43,6 +43,14 @@ class RegisterVet : AppCompatActivity() {
                             Toast.makeText(applicationContext, "Account regitred!!!", Toast.LENGTH_SHORT).show()
                             val intent = Intent(applicationContext, MainActivity::class.java)
                             startActivity(intent)
+
+                        }
+
+
+                    }else if(res == "Error"){
+
+                        runOnUiThread{
+                            Toast.makeText(applicationContext, "codigo incorrecto", Toast.LENGTH_SHORT).show()
 
                         }
 

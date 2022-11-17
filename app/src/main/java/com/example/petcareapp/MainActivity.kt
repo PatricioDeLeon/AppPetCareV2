@@ -10,6 +10,7 @@ import com.example.petcareapp.VetPackage.RegisterVet
 import com.example.petcareapp.databinding.ActivityMainBinding
 import com.example.petcareapp.databinding.ActivityMenuBinding
 import com.example.petcareapp.databinding.LoginActivityBinding
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

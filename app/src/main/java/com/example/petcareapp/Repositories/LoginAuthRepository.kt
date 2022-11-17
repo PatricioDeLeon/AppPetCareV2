@@ -13,9 +13,8 @@ import java.io.IOException
 class LoginAuthRepository {
 
     val prefix = "https://pet-care-service.onrender.com"
-
+    val prefixDev = "http://192.168.100.11"
     suspend fun login(email:String , password:String):String{
-
         try{
             val data = hashMapOf(
                 "email" to email,
@@ -24,7 +23,7 @@ class LoginAuthRepository {
             val json = Gson().toJson(data)
 
             Log.i("json: ", json)
-              //  val URL  = "http://192.168.100.11/api/auth_login"
+
              val URL = "$prefix/api/auth_login"
             if(URL.isNotEmpty()){
                 // create http client
@@ -57,7 +56,7 @@ class LoginAuthRepository {
     }
 
     suspend fun loginVet(email:String , password:String):String{
-//        lateinit var resultVet:String
+
         try{
             val data = hashMapOf(
                 "email" to email,
@@ -66,7 +65,6 @@ class LoginAuthRepository {
             val json = Gson().toJson(data)
             Log.i("json: ", json)
 
-
             val jsonObject = JSONObject()
 
             jsonObject.put("password_vet",password )
@@ -74,17 +72,9 @@ class LoginAuthRepository {
 
             val mediaType = "application/json; charset=utf-8".toMediaType()
             val body = jsonObject.toString().toRequestBody(mediaType)
-
-              val URL  = "$prefix/api/vets/auth_login_vet"
-             //   val URL = "https://pet-care-service.onrender.com/api/auth_login"
+            val URL  = "$prefix/api/vets/auth_login_vet"
             if(URL.isNotEmpty()){
-                // create http client
                 val dataFromUrl = OkHttpClient()
-                //build the request
-//                val formBody = FormBody.Builder()
-//                    .add("data", json)
-//                    .build()
-
                 val request = Request.Builder()
                     .url(URL)
                     .post(body)
@@ -94,28 +84,7 @@ class LoginAuthRepository {
                 StrictMode.setThreadPolicy(policy)
 
                 //Enqueque the requ3est and handle the call backs
-
                 return dataFromUrl.newCall(request).execute().body!!.string()
-
-//                dataFromUrl.newCall(request).enqueue(object : Callback {
-//                    override fun onFailure(call: Call, e: IOException) {
-//                        e.printStackTrace()
-//                    }
-//
-//                    override fun onResponse(call: Call, response: Response) {
-//                        Log.i("Response", "Recived responses from server");
-//                        response.use {
-//                            if(response.isSuccessful){
-//                                resultVet =  response.body!!.string()
-//                            }else{
-//                                Log.e("http error", "server fail")
-//                                resultVet = "false"
-//
-//                            }
-//                        }
-//                    }
-//                })
-
 
 
             }else{
@@ -125,8 +94,7 @@ class LoginAuthRepository {
         }catch(e : Exception){
             return "NON"
         }
-//        Thread.sleep(750)
-//        return resultVet
+
     }
 
 }

@@ -4,16 +4,18 @@ import android.os.StrictMode
 import android.util.Log
 import com.google.gson.Gson
 import okhttp3.*
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONObject
 import java.io.IOException
 
 class PetsRepository {
 
     val prefix = "https://pet-care-service.onrender.com"
-
+    val prefixDev = "http://192.168.100.11"
     fun getPetsById(id:Int):String{
 
         try{
-
             val URL  = "$prefix/api/get_pet_by_user/$id"
             if(URL.isNotEmpty()){
                 // create http client
@@ -27,28 +29,6 @@ class PetsRepository {
 
                 //Enqueque the requ3est and handle the call backs
                 return dataFromUrl.newCall(request).execute().body!!.string()
-//                dataFromUrl.newCall(request).enqueue(object : Callback {
-//                    override fun onFailure(call: Call, e: IOException) {
-//                        e.printStackTrace()
-//                    }
-//
-//                    override fun onResponse(call: Call, response: Response) {
-//                        Log.i("Response", "Recived responses from server");
-//                        response.use {
-//                            if(response.isSuccessful){
-//
-//                                result =  response.body!!.string()
-//
-//                            }else{
-//                                Log.e("http error", "server fail")
-//                                result = "false"
-//
-//                            }
-//                        }
-//                    }
-//                })
-
-
 
             }else{
                 return "No existe el url"
@@ -57,11 +37,7 @@ class PetsRepository {
         }catch(e : Exception){
             return "NON"
         }
-
-
-
     }
-
 
     fun registerPet(id_user: Int, name:String, age:String, race:String, weight:String, additional:String):String{
 
@@ -98,25 +74,6 @@ class PetsRepository {
 
                 //Enqueque the requ3est and handle the call backs
                 return dataFromUrl.newCall(request).execute().body!!.string()
-//                dataFromUrl.newCall(request).enqueue(object : Callback {
-//                    override fun onFailure(call: Call, e: IOException) {
-//                        e.printStackTrace()
-//                    }
-//
-//                    override fun onResponse(call: Call, response: Response) {
-//                        Log.i("Response", "Recived responses from server");
-//                        response.use {
-//                            if(response.isSuccessful){
-//                                resultPet =  response.body!!.string()
-//                            }else{
-//                                Log.e("http error", "server fail")
-//                                resultPet = "false"
-//
-//                            }
-//                        }
-//                    }
-//                })
-
 
 
             }else{
@@ -131,7 +88,6 @@ class PetsRepository {
     }
 
     fun deletePet (id:Int):String{
-        //  lateinit var resultPetDeeted:String
 
         try{
 
@@ -156,26 +112,6 @@ class PetsRepository {
 
                 //Enqueque the requ3est and handle the call backs
                 return dataFromUrl.newCall(request).execute().body!!.string()
-//                dataFromUrl.newCall(request).enqueue(object : Callback {
-//                    override fun onFailure(call: Call, e: IOException) {
-//                        e.printStackTrace()
-//                    }
-//
-//                    override fun onResponse(call: Call, response: Response) {
-//                        Log.i("Response", "Recived responses from server");
-//                        response.use {
-//                            if(response.isSuccessful){
-//
-//                                resultPetDeeted =  response.body!!.string()
-//
-//                            }else{
-//                                Log.e("http error", "server fail")
-//                                resultPetDeeted = "false"
-//
-//                            }
-//                        }
-//                    }
-//                })
 
 
 
@@ -187,13 +123,10 @@ class PetsRepository {
             return "NON"
         }
 
-//        Thread.sleep(500)
-//        return resultPetDeeted
     }
 
 
     fun updatePet(idPet:Int,namePet:String,agePet:String, racePet:String, weightPet:String, additionalPet:String ):String{
-        //  lateinit var resultPetUpdated:String
 
         try{
             val objeto = hashMapOf(
@@ -228,24 +161,6 @@ class PetsRepository {
 
                 //Enqueque the requ3est and handle the call backs
                 return dataFromUrl.newCall(request).execute().body!!.string()
-//                dataFromUrl.newCall(request).enqueue(object : Callback {
-//                    override fun onFailure(call: Call, e: IOException) {
-//                        e.printStackTrace()
-//                    }
-//
-//                    override fun onResponse(call: Call, response: Response) {
-//                        Log.i("Response", "Recived responses from server");
-//                        response.use {
-//                            if(response.isSuccessful){
-//                                resultPetUpdated =  response.body!!.string()
-//                            }else{
-//                                Log.e("http error", "server fail")
-//                                resultPetUpdated = "false"
-//
-//                            }
-//                        }
-//                    }
-//                })
 
 
 
@@ -257,8 +172,79 @@ class PetsRepository {
             return "NON"
         }
 
-//
-//        Thread.sleep(500)
-//         return resultPetUpdated
     }
+
+    fun getVaccineByPetId(id:Int):String{
+        try{
+            val URL  = "$prefix/api/get_vaccine_by_pet/$id"
+
+            if(URL.isNotEmpty()){
+                // create http client
+                val dataFromUrl = OkHttpClient()
+
+                val request = Request.Builder()
+                    .url(URL)
+                    .build()
+
+                val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+                StrictMode.setThreadPolicy(policy)
+
+                //Enqueque the requ3est and handle the call backs
+                return dataFromUrl.newCall(request).execute().body!!.string()
+
+            }else{
+                return "No existe el url"
+            }
+
+        }catch(e : Exception){
+            return "NON"
+        }
+
+
+
+    }
+
+    fun addVaccineById(idUser:Int, idPet:Int, namePet:String, racePet:String, vaccineVac:String, messageVac:String, dateVAC:String):String{
+
+        val jsonObject = JSONObject()
+        jsonObject.put("id_user", idUser)
+        jsonObject.put("id_pet", idPet)
+        jsonObject.put("name_pet", namePet)
+        jsonObject.put("race_pet", racePet)
+        jsonObject.put("vaccine_vac", vaccineVac)
+        jsonObject.put("message_vac", messageVac)
+        jsonObject.put("date_vac", dateVAC)
+
+        val mediaType = "application/json; charset=utf-8".toMediaType()
+        val body = jsonObject.toString().toRequestBody(mediaType)
+
+
+        try{
+            val URL  = "$prefix/api/add_vaccine_pet"
+
+            if(URL.isNotEmpty()){
+                // create http client
+                val dataFromUrl = OkHttpClient()
+
+                val request = Request.Builder()
+                    .url(URL)
+                    .post(body)
+                    .build()
+
+                val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+                StrictMode.setThreadPolicy(policy)
+
+                //Enqueque the requ3est and handle the call backs
+                return dataFromUrl.newCall(request).execute().body!!.string()
+
+            }else{
+                return "No existe el url"
+            }
+
+        }catch(e : Exception){
+            return "NON"
+        }
+
+    }
+
 }

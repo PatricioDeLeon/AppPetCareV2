@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petcareapp.DataClasses.DataClassPets
 import com.example.petcareapp.PetsScreens.EditPetsDetails
+import com.example.petcareapp.PetsScreens.VaccinesPet
 import com.example.petcareapp.R
 
 class PetsAdapter(private val petsArray:ArrayList<DataClassPets>, private val emailUser:String, private val idUser:String): RecyclerView.Adapter<PetsViewHolder>() {
@@ -22,21 +23,12 @@ class PetsAdapter(private val petsArray:ArrayList<DataClassPets>, private val em
         holder.render(item)
          // click en cualquier card
 
+        val btnVaccines = holder.binding.goToVacciones
+
 
         holder.itemView.setOnClickListener {
 
             val sendData = petsArray.get(position)
-
-//            val intent = Intent(holder.itemView.context, EditPetActivity::class.java)
-//            intent.putExtra("idUser",idUser )
-//            intent.putExtra("emailUser",emailUser )
-//            intent.putExtra("id",sendData.id )
-//            intent.putExtra("name_pet",sendData.name_pet)
-//            intent.putExtra("age_pet",sendData.age_pet)
-//            intent.putExtra("race_pet",sendData.race_pet)
-//            intent.putExtra("weight_pet",sendData.weight_pet)
-//            intent.putExtra("additional_pet",sendData.additional_pet)
-//            holder.itemView.context.startActivity(intent)
 
             val bundle = Bundle()
 
@@ -57,6 +49,27 @@ class PetsAdapter(private val petsArray:ArrayList<DataClassPets>, private val em
             transaction.commit()
 
 
+
+        }
+
+        btnVaccines.setOnClickListener {
+
+            val sendData = petsArray.get(position)
+
+            val bundle = Bundle()
+
+            bundle.putString("idUser", idUser)
+            bundle.putString("emailUser", emailUser )
+            bundle.putString("id", sendData.id )
+            bundle.putString("name_pet", sendData.name_pet)
+            bundle.putString("race_pet", sendData.race_pet)
+
+            val editText = it.context as AppCompatActivity
+            val transaction = editText.supportFragmentManager.beginTransaction()
+            val fragmentVaccines = VaccinesPet()
+            fragmentVaccines.arguments = bundle
+            transaction.replace(R.id.frameLayout_pets , fragmentVaccines)
+            transaction.commit()
 
         }
 

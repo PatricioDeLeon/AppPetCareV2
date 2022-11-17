@@ -47,7 +47,6 @@ class PetsMenuFragmnt : Fragment() {
             transaction?.replace(R.id.frameLayout_pets,goToAddPets )?.commit()
 
         }
-
         val petsRepo = PetsRepository()
         val result = petsRepo.getPetsById(idUser.toInt())
 
@@ -55,8 +54,7 @@ class PetsMenuFragmnt : Fragment() {
             Toast.makeText(activity, "No hay pets para mostrar", Toast.LENGTH_SHORT).show()
         }else{
             val jsonArr = JSONArray(result)
-            Log.i("DATA jsonArr ", jsonArr.toString())
-            // val jsonObj = jsonArr.getJSONObject(0)
+
             (0 until jsonArr.length()).forEach {
                 val objectData =  jsonArr.getJSONObject(it)
                 val dataToAdd =  DataClassPets(
@@ -72,8 +70,6 @@ class PetsMenuFragmnt : Fragment() {
             initRecyclerView(petsList)
             //  Toast.makeText(activity, jsonArr.toString(), Toast.LENGTH_SHORT).show()
         }
-
-
     }
 
     override fun onCreateView(

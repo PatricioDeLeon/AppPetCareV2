@@ -8,6 +8,7 @@ import java.io.IOException
 
 class UsersRepository {
     val prefix = "https://pet-care-service.onrender.com"
+    val prefixDev = "http://192.168.100.11"
     fun getUserById(id:Int):String{
           // lateinit var result:String
         try{
@@ -27,26 +28,6 @@ class UsersRepository {
 
                 //Enqueque the requ3est and handle the call backs
                 return dataFromUrl.newCall(request).execute().body!!.string()
-//                dataFromUrl.newCall(request).enqueue(object : Callback {
-//                    override fun onFailure(call: Call, e: IOException) {
-//                        e.printStackTrace()
-//                    }
-//
-//                    override fun onResponse(call: Call, response: Response) {
-//                        Log.i("Response", "Recived responses from server");
-//                        response.use {
-//                            if(response.isSuccessful){
-//
-//                                result =  response.body!!.string()
-//
-//                            }else{
-//                                Log.e("http error", "server fail")
-//                                result = "false"
-//
-//                            }
-//                        }
-//                    }
-//                })
 
 
 
@@ -63,7 +44,6 @@ class UsersRepository {
     }
 
     fun updateUser(name:String, email:String, phone:String, id:String):String{
-        //  lateinit var result2:String
         try{
 
             val objeto = hashMapOf(
@@ -94,27 +74,6 @@ class UsersRepository {
 
                 //Enqueque the requ3est and handle the call backs
                 return dataFromUrl.newCall(request).execute().body!!.string()
-//                dataFromUrl.newCall(request).enqueue(object : Callback {
-//                    override fun onFailure(call: Call, e: IOException) {
-//                        e.printStackTrace()
-//                    }
-//
-//                    override fun onResponse(call: Call, response: Response) {
-//                        Log.i("Response", "Recived responses from server");
-//                        response.use {
-//                            if(response.isSuccessful){
-//                                result2 =  response.body!!.string()
-//
-//                            }else{
-//                                Log.e("http error", "server fail")
-//                                result2 = "false"
-//
-//                            }
-//                        }
-//                    }
-//                })
-
-
 
             }else{
                 return "No existe el url"
@@ -124,7 +83,5 @@ class UsersRepository {
             return "NON"
         }
 
-//        Thread.sleep(500)
-//        return result2
     }
 }

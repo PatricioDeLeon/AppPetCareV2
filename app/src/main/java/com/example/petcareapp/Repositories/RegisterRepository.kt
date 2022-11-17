@@ -12,38 +12,24 @@ import java.io.IOException
 class RegisterRepository {
     private lateinit var resultVetRegistred: String
 
+    val prefix = "https://pet-care-service.onrender.com"
+    val prefixDev = "http://192.168.100.11"
+
     suspend fun register(name: String, email: String, password: String, phone: String): String {
         try {
-//            val objeto = hashMapOf(
-//                "name" to name,
-//                "email" to email,
-//                "password" to password,
-//                "phone" to phone
-//            )
-
-            // Log.i("objeto", objeto.toString())
 
             val jsonObject = JSONObject()
-
             jsonObject.put("name", name)
             jsonObject.put("email", email)
             jsonObject.put("password", password)
             jsonObject.put("phone", phone)
-            // Log.i("json ", jsonObject.toString())
+
             val mediaType = "application/json; charset=utf-8".toMediaType()
             val body = jsonObject.toString().toRequestBody(mediaType)
-
-            //  val json = Gson().toJson(objeto)
-            //  val URL  = "http://192.168.100.11/api/add_user_verify"
-            val URL = "https://pet-care-service.onrender.com/api/add_user_verify"
+            val URL = "$prefix/api/add_user_verify"
             if (URL.isNotEmpty()) {
-                // create http client
-                // create http client
                 val dataFromUrl = OkHttpClient()
-                //build the request
-//                val formBody = FormBody.Builder()
-//                    .add("data", jsonObject)
-//                    .build()
+
                 val request = Request.Builder()
                     .url(URL)
                     .post(body)
@@ -54,26 +40,6 @@ class RegisterRepository {
 
                 //Enqueque the requ3est and handle the call backs
                 return dataFromUrl.newCall(request).execute().body!!.string()
-
-//                dataFromUrl.newCall(request).enqueue(object : Callback {
-//                    override fun onFailure(call: Call, e: IOException) {
-//                        Log.i("FALOOOOO", request.toString())
-//                        e.printStackTrace()
-//                    }
-//
-//                    override fun onResponse(call: Call, response: Response) {
-//                        Log.i("Response", "Recived responses from server");
-//                        response.use {
-//                            if (response.isSuccessful) {
-//                                result = response.body!!.string()
-//                            } else {
-//                                Log.e("http error", "server fail")
-//                                result = "false"
-//
-//                            }
-//                        }
-//                    }
-//                })
 
 
             } else {
@@ -91,22 +57,15 @@ class RegisterRepository {
         email: String,
         password: String,
         cedula: String,
-        phone: String
+        phone: String,
+        code:String,
     ): String {
 
 
         try {
-//            val objeto = hashMapOf(
-//                "name_" to name,
-//                "email" to email,
-//                "password" to password,
-//                "phone" to phone
-//            )
-
-            // Log.i("objeto", objeto.toString())
 
             val jsonObject = JSONObject()
-
+            jsonObject.put("code", code)
             jsonObject.put("name_vet", name)
             jsonObject.put("email_vet", email)
             jsonObject.put("password_vet", password)
@@ -116,17 +75,10 @@ class RegisterRepository {
             val mediaType = "application/json; charset=utf-8".toMediaType()
             val body = jsonObject.toString().toRequestBody(mediaType)
 
-            //  val json = Gson().toJson(objeto)
-            //  val URL  = "http://192.168.100.11/api/vets/add_vets_verify"
-            val URL = "https://pet-care-service.onrender.com/api/vets/add_vets_verify"
+            val URL = "$prefix/api/vets/add_vets_verify"
             if (URL.isNotEmpty()) {
-                // create http client
-                // create http client
+
                 val dataFromUrl = OkHttpClient()
-                //build the request
-//                val formBody = FormBody.Builder()
-//                    .add("data", jsonObject)
-//                    .build()
                 val request = Request.Builder()
                     .url(URL)
                     .post(body)
