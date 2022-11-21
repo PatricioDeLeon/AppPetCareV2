@@ -119,6 +119,11 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        binding.goToadmin.setOnClickListener{
+            val intent = Intent(this, admin::class.java)
+            startActivity(intent)
+        }
+
 
     }
 
