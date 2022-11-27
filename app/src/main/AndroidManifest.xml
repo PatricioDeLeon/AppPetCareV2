@@ -38,7 +38,7 @@
         <!-- android:value="" /> -->
         <!-- </activity> -->
         <activity
-            android:name=".ProfileScreens.PetsScreens.PetsMenuActivity"
+            android:name=".PetsScreens.PetsMenuActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

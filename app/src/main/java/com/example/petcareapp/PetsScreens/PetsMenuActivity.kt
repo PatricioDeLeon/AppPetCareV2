@@ -1,4 +1,4 @@
-package com.example.petcareapp.ProfileScreens.PetsScreens
+package com.example.petcareapp.PetsScreens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

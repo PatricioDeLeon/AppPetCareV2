@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petcareapp.DataClasses.DataClassPets
 import com.example.petcareapp.PetsScreens.VaccinesPet
-import com.example.petcareapp.ProfileScreens.PetsScreens.EditPetsDetails
+import com.example.petcareapp.PetsScreens.EditPetsDetails
 import com.example.petcareapp.R
 
 class PetsAdapter(private val petsArray:ArrayList<DataClassPets>, private val emailUser:String, private val idUser:String): RecyclerView.Adapter<PetsViewHolder>() {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileScreens.PetsScreens.PetsMenuActivity"
+    tools:context=".PetsScreens.PetsMenuActivity"
     android:orientation="vertical"
     android:weightSum="20"
     android:background="@color/lpurple"

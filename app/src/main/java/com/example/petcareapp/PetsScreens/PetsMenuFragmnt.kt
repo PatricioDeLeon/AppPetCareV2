@@ -1,4 +1,4 @@
-package com.example.petcareapp.ProfileScreens.PetsScreens
+package com.example.petcareapp.PetsScreens
 
 import android.os.Bundle
 import android.util.Log
