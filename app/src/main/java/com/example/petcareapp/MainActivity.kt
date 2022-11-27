@@ -1,20 +1,16 @@
 package com.example.petcareapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.petcareapp.Repositories.LoginAuthRepository
 import com.example.petcareapp.VetPackage.RegisterVet
-import com.example.petcareapp.databinding.ActivityMainBinding
-import com.example.petcareapp.databinding.ActivityMenuBinding
 import com.example.petcareapp.databinding.LoginActivityBinding
-import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
 
@@ -97,10 +93,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-
-
-
-
 
 
 
