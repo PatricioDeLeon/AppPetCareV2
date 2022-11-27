@@ -41,7 +41,6 @@ class EditUserFragment : Fragment() {
                 val result = userRepo.updateUser(name, email, phone,idUser)
                 if(result == "true"){
                     Toast.makeText(activity, "Data Updated", Toast.LENGTH_SHORT).show()
-
                     val bundle = Bundle()
                     bundle.putString("id", idUser)
                     val goToProfile = ProfileFragment()
@@ -52,7 +51,6 @@ class EditUserFragment : Fragment() {
                   Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show()
 
                }
-
 
             }else{
 

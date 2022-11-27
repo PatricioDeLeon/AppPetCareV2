@@ -5,6 +5,9 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.petcareapp.databinding.ActivityMenuBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -12,9 +15,20 @@ import org.json.JSONObject
 class MenuActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMenuBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var fireStore: FirebaseFirestore
+    private lateinit var realTime: FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        fireStore = FirebaseFirestore.getInstance()
+        realTime = FirebaseDatabase.getInstance()
+
+        val userUid = firebaseAuth.currentUser?.uid
+        Toast.makeText(applicationContext, userUid, Toast.LENGTH_SHORT).show()
+
         val data = getIntent().getExtras()?.getString("userData")
         val typeOfUser = getIntent().getExtras()?.getString("typeUser")
         val jsonArr = JSONArray(data)

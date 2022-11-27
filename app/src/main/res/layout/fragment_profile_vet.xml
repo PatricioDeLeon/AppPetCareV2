@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileScreens.ProfileFragment"
+    android:orientation="vertical"
+    android:background="@color/lpink"
+    android:weightSum="20">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
+        android:weightSum="10"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:background="@color/dpink"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:weightSum="10"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/name_vet_label"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:hint="Nombre ->"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/cardview_light_background"
+                />
+            <TextView
+                android:id="@+id/name_vet_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:hint="nombre"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/cardview_light_background"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:weightSum="10"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/email_vet_label"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:hint="Email ->"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/cardview_light_background"
+                />
+            <TextView
+                android:id="@+id/email_vet_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:hint="email"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/cardview_light_background"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:weightSum="10"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/cedula_vet_label"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:hint="Cedula ->"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/cardview_light_background"
+                />
+            <TextView
+                android:id="@+id/cedula_vet_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:hint="cedula"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/cardview_light_background"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:weightSum="10"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/phone_vet_label"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:hint="Telefono ->"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/cardview_light_background"
+                />
+            <TextView
+                android:id="@+id/phone_vet_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:hint="Telefono"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/cardview_light_background"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:weightSum="10"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/id_vet_label"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:hint="Id ->"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/cardview_light_background"
+                />
+            <TextView
+                android:id="@+id/id_vet_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:hint="id"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:textColor="@color/cardview_light_background"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="2"
+        android:layout_marginTop="20dp"
+
+        >
+        <Button
+            android:id="@+id/go_to_edit_vet"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/ddpink"
+            android:layout_marginStart="10dp"
+            android:text="Editar"
+            />
+
+    </LinearLayout>
+</LinearLayout>

@@ -17,86 +17,133 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var binding: LoginActivityBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LoginActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        firebaseAuth = FirebaseAuth.getInstance()
 
 
+        binding.goToMenu.setOnClickListener {
 
-            binding.goToMenu.setOnClickListener {
+            if (!binding.vetCheck.isChecked) {
 
-                if(!binding.vetCheck.isChecked){
+                val password = binding.passwordLogin.text.toString()
+                val email = binding.emailLogin.text.toString()
+                val chckBoxChecked = true
 
-                    val password = binding.passwordLogin.text.toString()
-                    val email = binding.emailLogin.text.toString()
-                    val chckBoxChecked = true
+                if (!password.isNullOrEmpty() && !email.isNullOrEmpty()) {
 
-                    if(!password.isNullOrEmpty() && !email.isNullOrEmpty() ){
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val loginRepo = LoginAuthRepository()
+                        val res = loginRepo.login(email, password)
 
-                        CoroutineScope(Dispatchers.IO).launch {
-                            val loginRepo = LoginAuthRepository()
-                            val res = loginRepo.login(email, password)
+                        if (res == "false") {
+                            runOnUiThread {
+                                Toast.makeText(
+                                    applicationContext,
+                                    "Cuenta no existe",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        } else {
+                            runOnUiThread {
+                                firebaseAuth.signInWithEmailAndPassword(email, password)
+                                    .addOnCompleteListener {
+                                        if (it.isSuccessful) {
+                                            Toast.makeText(
+                                                applicationContext,
+                                                res,
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                            val intent =
+                                                Intent(applicationContext, MenuActivity::class.java)
+                                            intent.putExtra("userData", res)
+                                            intent.putExtra("typeUser", chckBoxChecked.toString())
+                                            startActivity(intent)
 
-                            if(res == "false"){
-                                runOnUiThread{
-                                    Toast.makeText(applicationContext, "Cuenta no existe", Toast.LENGTH_SHORT).show()
-                                }
-                            }else{
-                                runOnUiThread{
-                                    Toast.makeText(applicationContext, res, Toast.LENGTH_SHORT).show()
-                                    val intent = Intent(applicationContext, MenuActivity::class.java)
-                                    intent.putExtra("userData", res)
-                                    intent.putExtra("typeUser", chckBoxChecked.toString())
-                                    startActivity(intent)
-                                }
+                                        }
+                                    }.addOnFailureListener {
+
+                                        Toast.makeText(
+                                            applicationContext,
+                                            it.message,
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+
+                                    }
+
+                            }
+                        }
+                    }
+
+                } else {
+                    Toast.makeText(this, "Somethign is empty", Toast.LENGTH_SHORT).show()
+                }
+
+            } else if (binding.vetCheck.isChecked) {
+
+                val password = binding.passwordLogin.text.toString()
+                val email = binding.emailLogin.text.toString()
+                val chckBoxChecked = false
+
+                if (!password.isNullOrEmpty() && !email.isNullOrEmpty()) {
+                    CoroutineScope(Dispatchers.IO).launch {
+
+                        val loginRepo = LoginAuthRepository()
+                        val res = loginRepo.loginVet(email, password)
+
+                        if (res == "false") {
+                            runOnUiThread {
+                                Toast.makeText(
+                                    applicationContext,
+                                    "Cuenta no existe",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        } else {
+                            runOnUiThread {
+                                firebaseAuth.signInWithEmailAndPassword(email, password)
+                                    .addOnCompleteListener {
+                                        if (it.isSuccessful) {
+                                            Toast.makeText(
+                                                applicationContext,
+                                                res,
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                            val intent =
+                                                Intent(applicationContext, MenuActivity::class.java)
+                                            intent.putExtra("userData", res)
+                                            intent.putExtra("typeUser", chckBoxChecked.toString())
+                                            startActivity(intent)
+
+                                        }
+                                    }.addOnFailureListener {
+
+                                        Toast.makeText(
+                                            applicationContext,
+                                            it.message,
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+
+                                    }
+
                             }
                         }
 
-                    }else{
-                        Toast.makeText(this, "Somethign is empty", Toast.LENGTH_SHORT).show()
-                    }
-
-                }else if(binding.vetCheck.isChecked){
-
-                    val password = binding.passwordLogin.text.toString()
-                    val email = binding.emailLogin.text.toString()
-                    val chckBoxChecked = false
-
-                    if(!password.isNullOrEmpty() && !email.isNullOrEmpty() ){
-                        CoroutineScope(Dispatchers.IO).launch {
-
-                            val loginRepo = LoginAuthRepository()
-                            val res = loginRepo.loginVet(email, password)
-
-                            if(res == "false"){
-                                runOnUiThread{
-                                    Toast.makeText(applicationContext, "Cuenta no existe", Toast.LENGTH_SHORT).show()
-                                }
-                            }else{
-                                runOnUiThread{
-                                    Toast.makeText(applicationContext, res, Toast.LENGTH_SHORT).show()
-                                    val intent = Intent(applicationContext, MenuActivity::class.java)
-                                    intent.putExtra("userData", res)
-                                    intent.putExtra("typeUser", chckBoxChecked.toString())
-                                    startActivity(intent)
-                                }
-                            }
-
-
-                        }
-
-
-
-                    }else{
 
                     }
+
+
+                } else {
 
                 }
 
             }
+
+        }
 
 
 
@@ -121,10 +168,6 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
-
-
-
 
 
 }
