@@ -13,9 +13,12 @@ import com.example.petcareapp.Requests.RequestUserActivity
 import com.example.petcareapp.Requests.RequestVetActivity
 import com.example.petcareapp.VetPackage.ProfileVetActivity
 import com.example.petcareapp.databinding.FragmentListMenuBinding
+
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
+
+import com.example.petcareapp.signin.SignInActivity
 
 
 class ListMenu : Fragment() {
@@ -92,6 +95,11 @@ class ListMenu : Fragment() {
                 Toast.makeText(activity, "Vet profile", Toast.LENGTH_SHORT).show()
             }
 
+        }
+        binding.containerLlamada.setOnClickListener{
+
+            val intent = Intent(activity, SignInActivity::class.java)
+            startActivity(intent)
         }
 
         binding.requestsId.setOnClickListener {
