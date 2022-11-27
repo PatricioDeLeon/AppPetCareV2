@@ -10,7 +10,6 @@
     android:weightSum="20">
 
 
-
     <TextView
         android:id="@+id/email_profile"
         android:layout_width="match_parent"

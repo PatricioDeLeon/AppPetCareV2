@@ -49,12 +49,7 @@
         android:layout_height="0dp"
         android:hint="Mensaje"
         android:layout_weight="1" />
-    <EditText
-        android:id="@+id/date_vac"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:hint="Fecha: YYYY/MM/DD"
-        android:layout_weight="1" />
+
 
     <Button
         android:id="@+id/btn_add_vac"

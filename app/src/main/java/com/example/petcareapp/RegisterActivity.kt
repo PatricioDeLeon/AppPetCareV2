@@ -48,41 +48,66 @@ class RegisterActivity : AppCompatActivity() {
             val password = binding.passwordRegister.text.toString()
             val phone = binding.phoneRegister.text.toString()
 
-            if(!name.isNullOrEmpty() || !email.isNullOrEmpty() || !password.isNullOrEmpty() || !phone.isNullOrEmpty()){
-                CoroutineScope(Dispatchers.IO).launch {
-                    val registerRepo = RegisterRepository()
-                    val res =  registerRepo.register(name,email,password,phone)
-                    if(res == "false"){
-                        runOnUiThread{
-                            Toast.makeText(applicationContext, "EMIAL ALREDY EXISR", Toast.LENGTH_SHORT).show()
-                        }
-                    }else{
-                        runOnUiThread{
-                            firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener {
-                                val user = hashMapOf(
-                                    "name" to name,
-                                    "email" to email,
-                                    "phone" to phone
+            if(binding.passwordRegister.text.toString().length > 6) {
+
+
+                if (!name.isNullOrEmpty() && !email.isNullOrEmpty() && !password.isNullOrEmpty() && !phone.isNullOrEmpty()) {
+
+
+                    firebaseAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnSuccessListener {
+
+                            val user = hashMapOf(
+                                "name" to name,
+                                "email" to email,
+                                "phone" to phone
+                            )
+                            fireStore.collection("usuarios").document(it.user?.uid.toString())
+                                .set(user)
+
+                            //   realTime.reference.child("chats").child().child(it.user?.uid.toString())
+
+                            CoroutineScope(Dispatchers.IO).launch {
+                                val registerRepo = RegisterRepository()
+                                val res = registerRepo.register(
+                                    name,
+                                    email,
+                                    password,
+                                    phone,
+                                    it.user?.uid.toString()
                                 )
-                                fireStore.collection("usuarios").document(it.user?.uid.toString())
-                                    .set(user)
+                                if (res == "false") {
+                                    runOnUiThread {
+                                        Toast.makeText(
+                                            applicationContext,
+                                            "EMIAL ALREDY EXISR",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+                                } else {
+                                    runOnUiThread {
+                                        Toast.makeText(
+                                            applicationContext,
+                                            "Account regitred in server and firebase!!!",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                        val intent =
+                                            Intent(applicationContext, MainActivity::class.java)
+                                        startActivity(intent)
 
-                               //   realTime.reference.child("chats").child().child(it.user?.uid.toString())
-
-
-                                Toast.makeText(applicationContext, "Account regitred in server and firebase!!!", Toast.LENGTH_SHORT).show()
-                                val intent = Intent(applicationContext, MainActivity::class.java)
-                                startActivity(intent)
-
-                            }.addOnFailureListener {
-                                Log.i("Error: ", it.message.toString())
+                                    }
+                                }
                             }
-                        }
+
+                        }.addOnFailureListener {
+                        Log.i("Error: ", it.message.toString())
                     }
+                } else {
+                    Toast.makeText(applicationContext, "ERROR!!", Toast.LENGTH_SHORT).show()
+
                 }
             }else{
-                Toast.makeText(applicationContext, "ERROR!!", Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(applicationContext, "Min length password is 6", Toast.LENGTH_SHORT).show()
             }
 
 

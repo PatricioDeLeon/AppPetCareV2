@@ -40,18 +40,17 @@ class AddVaccine : Fragment() {
             val racePet = binding.racePet.text.toString()
             val vaccineVac = binding.vaccineVac.text.toString()
             val messageVac = binding.vaccineVac.text.toString()
-            val dateVac = binding.dateVac.text.toString()
 
             if (
                 !namePet.isNotEmpty()
                 || !racePet.isNotEmpty()
                 || !vaccineVac.isNotEmpty()
                 || messageVac.isNotEmpty()
-                || !dateVac.isNotEmpty()
+
             ){
                 val petRepo = PetsRepository()
 
-                val resultVac = petRepo.addVaccineById(idUser.toInt(),idPet.toInt(),namePet,racePet,vaccineVac,messageVac,dateVac)
+                val resultVac = petRepo.addVaccineById(idUser.toInt(),idPet.toInt(),namePet,racePet,vaccineVac,messageVac)
 
                 if(resultVac == "false"){
                     Toast.makeText(activity, "Error al guardar la vacuna", Toast.LENGTH_SHORT).show()

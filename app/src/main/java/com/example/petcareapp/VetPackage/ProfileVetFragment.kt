@@ -1,4 +1,4 @@
-package com.example.petcareapp.ProfileScreens
+package com.example.petcareapp.VetPackage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,80 +6,82 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.petcareapp.ProfileScreens.EditUserFragment
 import com.example.petcareapp.R
 import com.example.petcareapp.Repositories.UsersRepository
+import com.example.petcareapp.Repositories.VetRepositoy
 import com.example.petcareapp.databinding.FragmentProfileBinding
+import com.example.petcareapp.databinding.FragmentProfileVetBinding
 import org.json.JSONArray
 
 
-class ProfileFragment : Fragment() {
+class ProfileVetFragment : Fragment() {
 
-    private var _binding:FragmentProfileBinding? = null
+    private var _binding: FragmentProfileVetBinding? = null
     private val binding get() = _binding!!
     private lateinit var emailUser:String
     private lateinit var idUser:String
     private lateinit var typeUser:String
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if(arguments != null){
             val emailRecived = requireArguments().getString("email")
             val idRecived = requireArguments().getString("id")
             val typeOfUser = requireArguments().getString("typeOfUser")
-            binding.emailProfile.text = " Data: $emailRecived -> $idRecived "
             emailUser = emailRecived.toString()
             idUser = idRecived.toString()
             typeUser = typeOfUser.toString()
         }
 
-        val userRepo = UsersRepository()
-        val idToUse = idUser.toInt()
-        val res = userRepo.getUserById(idToUse)
-        ////////////////////////////////////////////////
-
-
+        val vetRepo = VetRepositoy()
+        val res = vetRepo.getVetById(idUser.toInt())
         Toast.makeText(activity, res, Toast.LENGTH_SHORT).show()
         val jsonArr = JSONArray(res)
         val jsonObj = jsonArr.getJSONObject(0)
-        val name = jsonObj.get("name")
-        val email = jsonObj.get("email")
-        val id = jsonObj.get("id")
-        val phone = jsonObj.get("phone")
-        binding.emailUserView.text = email.toString()
-        binding.nameUserView.text = name.toString()
-        binding.phoneUserView.text = phone.toString()
+        val name = jsonObj.get("name_vet")
+        val email = jsonObj.get("email_vet")
+        val id = jsonObj.get("id_vet")
+        val phone = jsonObj.get("phone_vet")
+        val cedula = jsonObj.get("cedula_vet")
 
-        binding.goToEditUser.setOnClickListener {
+        binding.nameVetView.text = name.toString()
+        binding.emailVetView.text = email.toString()
+        binding.cedulaVetView.text = cedula.toString()
+        binding.phoneVetView.text = phone.toString()
+        binding.idVetView.text = id.toString()
+
+        binding.goToEditVet.setOnClickListener {
 
             val bundle = Bundle()
             bundle.putString("email", email.toString() )
             bundle.putString("name", name.toString())
             bundle.putString("phone", phone.toString())
             bundle.putString("id", id.toString())
-            val goToEditUser = EditUserFragment()
-            goToEditUser.arguments =  bundle
+            val goToEditVet = EditVetFragment()
+            goToEditVet.arguments =  bundle
             val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.frameLayout_profile,goToEditUser )?.commit()
+            transaction?.replace(R.id.frameLayout_profile_vet,goToEditVet )?.commit()
 
         }
 
-
     }
+
+
+
+
+
+
+
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        _binding = FragmentProfileBinding.inflate(inflater,container, false)
+        _binding = FragmentProfileVetBinding.inflate(inflater,container, false)
         return binding.root
-    }
-
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
     }
 
 

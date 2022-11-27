@@ -58,18 +58,18 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/container_chat"
             android:layout_width="114dp"
-            android:layout_height="134dp"
-            app:cardBackgroundColor="@color/cardview_dark_background"
-            android:layout_marginTop="10dp"
+            android:layout_height="118dp"
             android:layout_marginStart="70dp"
-            >
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/cardview_dark_background">
 
 
             <TextView
+                android:id="@+id/requests_id"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="109dp"
                 android:gravity="center"
-                android:text="Chats"
+                android:text="Requests"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="20dp"
                 tools:layout_editor_absoluteX="235dp"

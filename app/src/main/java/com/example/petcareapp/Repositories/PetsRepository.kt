@@ -204,7 +204,7 @@ class PetsRepository {
 
     }
 
-    fun addVaccineById(idUser:Int, idPet:Int, namePet:String, racePet:String, vaccineVac:String, messageVac:String, dateVAC:String):String{
+    fun addVaccineById(idUser:Int, idPet:Int, namePet:String, racePet:String, vaccineVac:String, messageVac:String):String{
 
         val jsonObject = JSONObject()
         jsonObject.put("id_user", idUser)
@@ -213,7 +213,6 @@ class PetsRepository {
         jsonObject.put("race_pet", racePet)
         jsonObject.put("vaccine_vac", vaccineVac)
         jsonObject.put("message_vac", messageVac)
-        jsonObject.put("date_vac", dateVAC)
 
         val mediaType = "application/json; charset=utf-8".toMediaType()
         val body = jsonObject.toString().toRequestBody(mediaType)
@@ -229,6 +228,35 @@ class PetsRepository {
                 val request = Request.Builder()
                     .url(URL)
                     .post(body)
+                    .build()
+
+                val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+                StrictMode.setThreadPolicy(policy)
+
+                //Enqueque the requ3est and handle the call backs
+                return dataFromUrl.newCall(request).execute().body!!.string()
+
+            }else{
+                return "No existe el url"
+            }
+
+        }catch(e : Exception){
+            return "NON"
+        }
+
+    }
+
+    fun deleteVac(id:Int):String{
+
+        try{
+            val URL  = "$prefix/api/delete_vaccine_pet/$id"
+
+            if(URL.isNotEmpty()){
+                // create http client
+                val dataFromUrl = OkHttpClient()
+
+                val request = Request.Builder()
+                    .url(URL)
                     .build()
 
                 val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()

@@ -74,6 +74,7 @@
             android:orientation="vertical" >
 
             <Button
+                android:id="@+id/btnDeleteVac"
                 android:text="X"
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"

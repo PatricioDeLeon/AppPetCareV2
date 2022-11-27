@@ -9,7 +9,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.petcareapp.PetsScreens.PetsMenuActivity
 import com.example.petcareapp.ProfileScreens.ProfileActivity
+import com.example.petcareapp.Requests.RequestUserActivity
+import com.example.petcareapp.Requests.RequestVetActivity
+import com.example.petcareapp.VetPackage.ProfileVetActivity
 import com.example.petcareapp.databinding.FragmentListMenuBinding
+
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
+
 import com.example.petcareapp.signin.SignInActivity
 
 
@@ -20,6 +28,7 @@ class ListMenu : Fragment() {
     private lateinit var emailUser:String
     private lateinit var idlUser:String
     private lateinit var typeOfUser:String
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +51,7 @@ class ListMenu : Fragment() {
             typeOfUser = type.toString()
         }
 
+
         if(typeOfUser == "user"){
             binding.emailUser.text = " Usuario: $emailUser "
         }else if(typeOfUser == "vet"){
@@ -54,11 +64,18 @@ class ListMenu : Fragment() {
                 val intent = Intent(activity, ProfileActivity::class.java)
                 intent.putExtra("email",emailUser )
                 intent.putExtra("id",idlUser)
+                intent.putExtra("typeOfUser","user")
                 startActivity(intent)
 
             }
 
             if(typeOfUser == "vet"){
+
+                val intent = Intent(activity, ProfileVetActivity::class.java)
+                intent.putExtra("email",emailUser )
+                intent.putExtra("id",idlUser)
+                intent.putExtra("typeOfUser","vet")
+                startActivity(intent)
 
                 Toast.makeText(activity, "Vet profile", Toast.LENGTH_SHORT).show()
             }
@@ -83,6 +100,23 @@ class ListMenu : Fragment() {
 
             val intent = Intent(activity, SignInActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.requestsId.setOnClickListener {
+            if(typeOfUser == "user"){
+
+                val intent = Intent(activity, RequestUserActivity::class.java)
+                startActivity(intent)
+
+
+
+            }
+            if(typeOfUser == "vet"){
+                                            // change  RequestVetActivity
+                val intent = Intent(activity,RequestVetActivity::class.java)
+                startActivity(intent)
+
+            }
         }
 
     }
