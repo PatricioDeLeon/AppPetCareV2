@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.text.set
 import com.example.petcareapp.DataClasses.DataClassPets
 import com.example.petcareapp.R
 import com.example.petcareapp.Repositories.PetsRepository
@@ -22,24 +23,28 @@ class AddVaccine : Fragment() {
     private lateinit var idUser:String
     private lateinit var idPet:String
 
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (arguments != null) {
             val id_user = requireArguments().getString("id_user")
             val id_pet = requireArguments().getString("id_pet")
             val email_user = requireArguments().getString("email_user")
+            val name_pet = requireArguments().getString("name_pet")
+            val race_pet = requireArguments().getString("race_pet")
             idPet = id_pet.toString()
             idUser = id_user.toString()
             emailUser = email_user.toString()
+            binding.namePet.setText(name_pet)
+            binding.racePet.setText(race_pet)
         }
 
         binding.btnAddVac.setOnClickListener {
             // get values
+
+            val vaccineVac = binding.vaccineVac.text.toString()
+            val messageVac = binding.messageVac.text.toString()
             val namePet = binding.namePet.text.toString()
             val racePet = binding.racePet.text.toString()
-            val vaccineVac = binding.vaccineVac.text.toString()
-            val messageVac = binding.vaccineVac.text.toString()
 
             if (
                 !namePet.isNotEmpty()

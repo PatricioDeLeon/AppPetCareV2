@@ -24,7 +24,7 @@ class LoginAuthRepository {
 
             Log.i("json: ", json)
 
-             val URL = "$prefix/api/auth_login"
+             val URL = "$prefixDev/api/auth_login"
             if(URL.isNotEmpty()){
                 // create http client
                 val dataFromUrl = OkHttpClient()
@@ -72,7 +72,7 @@ class LoginAuthRepository {
 
             val mediaType = "application/json; charset=utf-8".toMediaType()
             val body = jsonObject.toString().toRequestBody(mediaType)
-            val URL  = "$prefix/api/vets/auth_login_vet"
+            val URL  = "$prefixDev/api/vets/auth_login_vet"
             if(URL.isNotEmpty()){
                 val dataFromUrl = OkHttpClient()
                 val request = Request.Builder()

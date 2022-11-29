@@ -11,15 +11,29 @@
     android:background="@color/lpink"
     >
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Perfil"
-        android:textSize="40dp"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:background="@color/dpink"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:weightSum="10"
+        android:orientation="horizontal"
+        >
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Perfil"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/dpink"
+            android:layout_weight="10" />
+
+
+    </LinearLayout>
+
+
 
     <FrameLayout
         android:id="@+id/frameLayout_profile"

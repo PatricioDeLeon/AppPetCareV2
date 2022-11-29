@@ -73,9 +73,10 @@
             android:background="@color/lpurple"
             android:orientation="vertical" >
 
-            <Button
+            <ImageButton
+                android:background="@color/lblue"
                 android:id="@+id/btnDeleteVac"
-                android:text="X"
+                android:src="@drawable/ic_trash"
                 android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"/>

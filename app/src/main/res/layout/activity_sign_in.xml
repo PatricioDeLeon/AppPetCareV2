@@ -53,7 +53,7 @@
                 android:fontFamily="sans-serif"
                 android:textStyle="bold"
                 android:textColor="@color/onlight_01"
-                android:text="@string/sign_in_title" />
+                android:text="Pet Care Calls" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -155,7 +155,7 @@
                 android:textStyle="bold"
                 android:textAllCaps="false"
                 app:cornerRadius="4dp"
-                app:backgroundTint="#742ddd"
+                app:backgroundTint="@color/navy_400"
                 />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

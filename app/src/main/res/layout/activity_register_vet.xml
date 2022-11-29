@@ -10,15 +10,35 @@
     android:background="@color/lorange"
     >
 
-    <TextView
-        android:layout_width="409dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center"
-        android:text="REGISTRATE COMO VET"
-        android:textColor="@color/white"
-        android:background="@color/dorange"
-        android:textSize="30dp" />
+        android:orientation="horizontal"
+        android:weightSum="10"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:text="REGISTRATE COMO VET"
+            android:textColor="@color/white"
+            android:background="@color/dorange"
+            android:textSize="30dp"
+            />
+
+        <ImageButton
+            android:id="@+id/go_to_make_request"
+            android:backgroundTint="@color/dorange"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:src="@drawable/ic_request"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

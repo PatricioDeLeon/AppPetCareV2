@@ -41,6 +41,8 @@ class VaccineAdapter(private val VaccinesArray:ArrayList<DataClassVacPet>, priva
                     bundle.putString("idUser", idUser)
                     bundle.putString("emailUser", emailUser )
                     bundle.putString("id", item.id_pet)
+                    bundle.putString("name_pet", item.name_pet)
+                    bundle.putString("race_pet", item.race_pet)
 
                     val editText = it.context as AppCompatActivity
                     val transaction = editText.supportFragmentManager.beginTransaction()

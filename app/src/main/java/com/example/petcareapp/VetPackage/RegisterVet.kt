@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.petcareapp.MainActivity
+import com.example.petcareapp.RegisterActivity
 import com.example.petcareapp.Repositories.RegisterRepository
+import com.example.petcareapp.Requests.GetCodeVetActivity
 import com.example.petcareapp.databinding.ActivityRegisterBinding
 import com.example.petcareapp.databinding.ActivityRegisterVetBinding
 import com.example.petcareapp.databinding.LoginActivityBinding
@@ -34,8 +36,6 @@ class RegisterVet : AppCompatActivity() {
 
 
         binding.btnRegisterVet.setOnClickListener {
-
-
 
             val code = binding.codeVet.text.toString()
             val name = binding.nameRegister.text.toString()
@@ -86,6 +86,13 @@ class RegisterVet : AppCompatActivity() {
             }else{
                 Toast.makeText(applicationContext, "complete los campos", Toast.LENGTH_SHORT).show()
             }
+
+        }
+
+        binding.goToMakeRequest.setOnClickListener {
+
+            val intent = Intent(this, GetCodeVetActivity::class.java)
+            startActivity(intent)
 
         }
 
