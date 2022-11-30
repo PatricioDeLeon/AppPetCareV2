@@ -1,7 +1,9 @@
 package com.example.petcareapp.Admin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.petcareapp.MenuActivity
 import com.example.petcareapp.PetsScreens.AddVaccine
 import com.example.petcareapp.PetsScreens.PetsMenuFragmnt
 import com.example.petcareapp.R
@@ -20,6 +22,12 @@ class MenuAdminActivity : AppCompatActivity() {
         val goToList = ListRequestsAdmin()
         transaction.replace(R.id.frameLayout_list_requests_code , goToList)
         transaction.commit()
+
+        binding.btnLogoutAdmin.setOnClickListener {
+            val intent = Intent(applicationContext, AdminActivity::class.java)
+            finish()
+            startActivity(intent)
+        }
 
 
     }

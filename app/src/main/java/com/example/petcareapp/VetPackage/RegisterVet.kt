@@ -69,7 +69,7 @@ class RegisterVet : AppCompatActivity() {
                                 val intent = Intent(applicationContext, MainActivity::class.java)
                                 startActivity(intent)
                             }
-                        }else if(res == "Error"){
+                        }else if(res == "BadCode"){
                             runOnUiThread{
                                 Toast.makeText(applicationContext, "codigo incorrecto", Toast.LENGTH_SHORT).show()
                             }
@@ -81,7 +81,7 @@ class RegisterVet : AppCompatActivity() {
                     }
 
                 }.addOnFailureListener {
-                    Log.i("Error: ", it.message.toString())
+                    Toast.makeText(applicationContext,it.message.toString(), Toast.LENGTH_SHORT).show()
                 }
             }else{
                 Toast.makeText(applicationContext, "complete los campos", Toast.LENGTH_SHORT).show()

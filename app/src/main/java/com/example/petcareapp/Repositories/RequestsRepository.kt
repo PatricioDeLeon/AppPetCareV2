@@ -20,7 +20,7 @@ class RequestsRepository {
         val body = jsonObject.toString().toRequestBody(mediaType)
 
         try{
-            val URL  = "$prefixDev/api/vets/add_req_vet"
+            val URL  = "$prefix/api/vets/add_req_vet"
             if(URL.isNotEmpty()){
                 // create http client
                 val dataFromUrl = OkHttpClient()
@@ -55,7 +55,7 @@ class RequestsRepository {
         val body = jsonObject.toString().toRequestBody(mediaType)
 
         try{
-            val URL  = "$prefixDev/api/vets/ckeck_status_code_vet"
+            val URL  = "$prefix/api/vets/ckeck_status_code_vet"
             if(URL.isNotEmpty()){
                 // create http client
                 val dataFromUrl = OkHttpClient()
@@ -86,7 +86,7 @@ class RequestsRepository {
     fun getAllRequests():String{
 
         try{
-            val URL  = "$prefixDev/api/vets/get_all_requests"
+            val URL  = "$prefix/api/vets/get_all_requests"
             if(URL.isNotEmpty()){
                 // create http client
                 val dataFromUrl = OkHttpClient()
@@ -112,4 +112,31 @@ class RequestsRepository {
 
     }
 
+    fun manageRequestsCode(email:String,id:Int):String{
+
+        try{
+            val URL  = "$prefix/api/vets/manage_req_vet/$id/$email"
+            if(URL.isNotEmpty()){
+                // create http client
+                val dataFromUrl = OkHttpClient()
+                //build the request
+
+                val request = Request.Builder()
+                    .url(URL)
+                    .build()
+
+                val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+                StrictMode.setThreadPolicy(policy)
+
+                //Enqueque the requ3est and handle the call backs
+                return dataFromUrl.newCall(request).execute().body!!.string()
+
+            }else{
+                return "No existe el url"
+            }
+
+        }catch(e : Exception){
+            return "Error data requests code"
+        }
+    }
 }

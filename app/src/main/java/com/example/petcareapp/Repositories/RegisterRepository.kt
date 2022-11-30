@@ -27,7 +27,7 @@ class RegisterRepository {
 
             val mediaType = "application/json; charset=utf-8".toMediaType()
             val body = jsonObject.toString().toRequestBody(mediaType)
-            val URL = "$prefixDev/api/add_user_verify"
+            val URL = "$prefix/api/add_user_verify"
             if (URL.isNotEmpty()) {
                 val dataFromUrl = OkHttpClient()
 
@@ -78,7 +78,7 @@ class RegisterRepository {
             val mediaType = "application/json; charset=utf-8".toMediaType()
             val body = jsonObject.toString().toRequestBody(mediaType)
 
-            val URL = "$prefixDev/api/vets/add_vets_verify"
+            val URL = "$prefix/api/vets/add_vets_verify"
             if (URL.isNotEmpty()) {
 
                 val dataFromUrl = OkHttpClient()

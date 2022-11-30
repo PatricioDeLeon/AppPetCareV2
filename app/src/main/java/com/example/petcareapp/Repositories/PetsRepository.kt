@@ -16,7 +16,7 @@ class PetsRepository {
     fun getPetsById(id:Int):String{
 
         try{
-            val URL  = "$prefixDev/api/get_pet_by_user/$id"
+            val URL  = "$prefix/api/get_pet_by_user/$id"
             if(URL.isNotEmpty()){
                 // create http client
                 val dataFromUrl = OkHttpClient()
@@ -54,7 +54,7 @@ class PetsRepository {
 
             Log.i("Data to send ", json)
 
-            val URL  = "$prefixDev/api/add_pet"
+            val URL  = "$prefix/api/add_pet"
 
             if(URL.isNotEmpty()){
                 // create http client
@@ -94,7 +94,7 @@ class PetsRepository {
             val objeto = hashMapOf( "id" to id )
             val json = Gson().toJson(objeto)
             Log.i("Data to send ", json)
-            val URL  = "$prefixDev/api/delete_pet/$id"
+            val URL  = "$prefix/api/delete_pet/$id"
 
             if(URL.isNotEmpty()){
                 // create http client
@@ -141,7 +141,7 @@ class PetsRepository {
 
             Log.i("Data to send ", json)
 
-            val URL  = "$prefixDev/api/update_pet"
+            val URL  = "$prefix/api/update_pet"
 
             if(URL.isNotEmpty()){
                 // create http client
@@ -176,7 +176,7 @@ class PetsRepository {
 
     fun getVaccineByPetId(id:Int):String{
         try{
-            val URL  = "$prefixDev/api/get_vaccine_by_pet/$id"
+            val URL  = "$prefix/api/get_vaccine_by_pet/$id"
 
             if(URL.isNotEmpty()){
                 // create http client
@@ -219,7 +219,7 @@ class PetsRepository {
 
 
         try{
-            val URL  = "$prefixDev/api/add_vaccine_pet"
+            val URL  = "$prefix/api/add_vaccine_pet"
 
             if(URL.isNotEmpty()){
                 // create http client
@@ -249,7 +249,7 @@ class PetsRepository {
     fun deleteVac(id:Int):String{
 
         try{
-            val URL  = "$prefixDev/api/delete_vaccine_pet/$id"
+            val URL  = "$prefix/api/delete_vaccine_pet/$id"
 
             if(URL.isNotEmpty()){
                 // create http client

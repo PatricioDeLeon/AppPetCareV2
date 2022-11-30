@@ -13,7 +13,7 @@ class UsersRepository {
           // lateinit var result:String
         try{
 
-            val URL  = "$prefixDev/api/get_user_by_id/$id"
+            val URL  = "$prefix/api/get_user_by_id/$id"
             if(URL.isNotEmpty()){
                 // create http client
                 val dataFromUrl = OkHttpClient()
@@ -52,7 +52,7 @@ class UsersRepository {
             val json = Gson().toJson(objeto)
 
 
-            val URL  = "$prefixDev/api/update_user"
+            val URL  = "$prefix/api/update_user"
             if(URL.isNotEmpty()){
                 // create http client
                 val dataFromUrl = OkHttpClient()

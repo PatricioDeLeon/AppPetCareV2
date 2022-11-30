@@ -24,6 +24,7 @@
             android:textSize="30dp"
             />
         <ImageButton
+            android:id="@+id/btn_logout_admin"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"

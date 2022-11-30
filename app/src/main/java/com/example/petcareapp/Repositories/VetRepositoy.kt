@@ -16,7 +16,7 @@ class VetRepositoy {
     fun getVetById(id:Int):String{
         try{
 
-            val URL  = "$prefixDev/api/vets/get_vet_by_id/$id"
+            val URL  = "$prefix/api/vets/get_vet_by_id/$id"
             if(URL.isNotEmpty()){
                 // create http client
                 val dataFromUrl = OkHttpClient()
@@ -52,7 +52,7 @@ class VetRepositoy {
             val mediaType = "application/json; charset=utf-8".toMediaType()
             val body = jsonObject.toString().toRequestBody(mediaType)
 
-            val URL  = "$prefixDev/api/vets/update_vet"
+            val URL  = "$prefix/api/vets/update_vet"
             if(URL.isNotEmpty()){
                 // create http client
                 val dataFromUrl = OkHttpClient()
