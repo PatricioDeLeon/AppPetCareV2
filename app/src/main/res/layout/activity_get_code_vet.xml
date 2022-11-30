@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Requests.GetCodeVetActivity"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@color/navy_400"
+    >
+
+    <TextView
+        android:text="Get a code"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+    <TextView
+        android:text="Escribe tu email para conocer tu estatus"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="10"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/email_vet"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8" />
+
+
+            <ImageButton
+                android:id="@+id/send_action"
+                android:background="#0000"
+                android:src="@drawable/ic_send_action"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2" />
+        
+        
+    </LinearLayout>
+
+    <TextView
+        android:textIsSelectable="true"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:id="@+id/status_request"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2" />
+    <TextView
+        android:text="No tienes codigo? envia una peticion"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+    
+    <Button
+        android:id="@+id/send_a_requests"
+        android:backgroundTint="@color/dblue"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Send a requests"
+        />
+
+
+</LinearLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    android:weightSum="10"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:weightSum="10"
+        android:orientation="horizontal"
+        android:background="@color/lblue"
+        >
+
+        <TextView
+            android:text="El motivo de su peticion?"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="8" />
+
+        <ImageButton
+            android:id="@+id/close_modal_send_code"
+            android:backgroundTint="@color/navy_400"
+            android:src="@drawable/ic_close"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/email_vet_req"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:layout_weight="2"
+        android:hint="Email" />
+
+    <EditText
+        android:layout_margin="5dp"
+        android:hint="mensaje"
+        android:id="@+id/message_req"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2" />
+    <TextView
+        android:text="Enviar peticion"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:weightSum="10"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <Button
+            android:backgroundTint="@color/navy_400"
+            android:id="@+id/btnAcceptRequestCode"
+            android:text="accept"
+            android:layout_margin="20dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.petcareapp.Chat.MenuChatsUserActivity
 import com.example.petcareapp.PetsScreens.PetsMenuActivity
 import com.example.petcareapp.ProfileScreens.ProfileActivity
 import com.example.petcareapp.Requests.RequestUserActivity
@@ -28,6 +29,7 @@ class ListMenu : Fragment() {
     private lateinit var emailUser:String
     private lateinit var idlUser:String
     private lateinit var typeOfUser:String
+    private lateinit var firebaseAuth: FirebaseAuth
 
 
     override fun onCreateView(
@@ -41,6 +43,7 @@ class ListMenu : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        firebaseAuth = FirebaseAuth.getInstance()
         if(arguments != null){
             val email = requireArguments().getString("email")
             val id = requireArguments().getString("id")
@@ -82,10 +85,9 @@ class ListMenu : Fragment() {
 
         }
         binding.containerPets.setOnClickListener{
-
             if(typeOfUser == "user"){
                 val intent = Intent(activity, PetsMenuActivity::class.java)
-                intent.putExtra("email",emailUser )
+                intent.putExtra("email",emailUser)
                 intent.putExtra("id",idlUser)
                 startActivity(intent)
             }
@@ -119,6 +121,27 @@ class ListMenu : Fragment() {
             }
         }
 
+        binding.containerChats.setOnClickListener {
+            if(typeOfUser == "user"){
+
+                Toast.makeText(activity, typeOfUser, Toast.LENGTH_SHORT).show()
+                val intent = Intent(activity,MenuChatsUserActivity::class.java)
+                intent.putExtra("typeOfUser","user")
+                startActivity(intent)
+
+            }
+            if(typeOfUser == "vet"){
+
+                Toast.makeText(activity, typeOfUser, Toast.LENGTH_SHORT).show()
+                val intent = Intent(activity,MenuChatsUserActivity::class.java)
+                intent.putExtra("typeOfUser","vet")
+                startActivity(intent)
+
+            }
+        }
+
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -138,16 +161,6 @@ class ListMenu : Fragment() {
 
 
          */
-        binding.btnShowData.setOnClickListener {
-
-            Toast.makeText(activity, "Click", Toast.LENGTH_SHORT).show()
-
-            val goToinfo = infoFragment()
-
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.frameLayout,goToinfo )?.commit()
-
-        }
 
     }
 

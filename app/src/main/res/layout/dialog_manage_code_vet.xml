@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    android:weightSum="10"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:weightSum="10"
+        android:orientation="horizontal"
+        android:gravity="end"
+        >
+        <ImageButton
+            android:backgroundTint="@color/navy_400"
+            android:src="@drawable/ic_close"
+            android:id="@+id/closeDialogCodeReqVet"
+            android:layout_marginEnd="5dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:textSize="20dp"
+        android:text="Generar un codigo al ver para registrarse?"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:weightSum="10"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:text="Eliminar la peticion"
+            android:gravity="center"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:text="Aceptar y generar un codigo"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:weightSum="10"
+        android:orientation="horizontal"
+        >
+        <ImageButton
+            android:src="@drawable/ic_trash"
+            android:id="@+id/btnDeleteReqCodeVet"
+            android:text="Delete"
+            android:backgroundTint="@color/navy_400"
+            android:layout_margin="20dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+        <ImageButton
+            android:id="@+id/btnAcceptReqCodeVet"
+            android:src="@drawable/ic_request"
+            android:backgroundTint="@color/navy_400"
+            android:layout_margin="20dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

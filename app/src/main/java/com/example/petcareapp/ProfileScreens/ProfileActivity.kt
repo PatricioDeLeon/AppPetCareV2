@@ -1,9 +1,11 @@
 package com.example.petcareapp.ProfileScreens
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.petcareapp.ListMenu
+import com.example.petcareapp.MenuActivity
 import com.example.petcareapp.R
 import com.example.petcareapp.databinding.ActivityMenuBinding
 import com.example.petcareapp.databinding.ActivityProfileBinding
@@ -31,7 +33,9 @@ class ProfileActivity : AppCompatActivity() {
         //  transaction.addToBackStack(null)
         transaction.commit()
 
-        Toast.makeText(applicationContext, "data: $email -> $id", Toast.LENGTH_SHORT).show()
+         // Toast.makeText(applicationContext, "data: $email -> $id", Toast.LENGTH_SHORT).show()
+
+
 
     }
 }

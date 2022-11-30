@@ -42,13 +42,16 @@ class RequestVetActivity : AppCompatActivity() {
                     Log.i("Data -> ", " ${doc.child("name_user").value.toString()}")
                     Log.i("Data -> ", " ${doc.child("email_user").value.toString()}")
                     Log.i("Data -> ", " ${doc.child("message_req").value.toString()}")
-
+                    Log.i("Data -> ", " ${doc.key.toString()}")
+                    Log.i("Data -> ", " ${doc.child("name_pet").value.toString()}")
                     if(doc.child("uid_vet").value.toString().equals(firebaseAuth.currentUser?.uid)){
-                        Log.i("datona", "ola")
                         val dataToAdd = DataClassRequest(
                             doc.child("name_user").value.toString(),
                             doc.child("email_user").value.toString(),
-                            doc.child("message_req").value.toString()
+                            doc.child("message_req").value.toString(),
+                            doc.key.toString(),
+                            doc.child("name_pet").value.toString()
+
                         )
 
                         requests.add(dataToAdd)

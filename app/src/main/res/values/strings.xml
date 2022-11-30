@@ -60,4 +60,6 @@
     <string name="room_info_title">Room information</string>
     <string name="room_info_room_id_title">Room ID</string>
     <string name="room_info_created_by_title">Created by</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

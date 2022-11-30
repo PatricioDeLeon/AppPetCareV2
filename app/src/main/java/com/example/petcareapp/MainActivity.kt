@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.petcareapp.Admin.AdminActivity
 import com.example.petcareapp.Repositories.LoginAuthRepository
 import com.example.petcareapp.VetPackage.RegisterVet
 import com.example.petcareapp.databinding.LoginActivityBinding
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -54,11 +56,13 @@ class MainActivity : AppCompatActivity() {
                                                 res,
                                                 Toast.LENGTH_SHORT
                                             ).show()
-                                            val intent =
-                                                Intent(applicationContext, MenuActivity::class.java)
+
+                                            val intent = Intent(applicationContext, MenuActivity::class.java)
                                             intent.putExtra("userData", res)
                                             intent.putExtra("typeUser", chckBoxChecked.toString())
                                             startActivity(intent)
+                                            binding.emailLogin.text = null
+                                            binding.passwordLogin.text = null
 
                                         }
                                     }.addOnFailureListener {
@@ -109,11 +113,14 @@ class MainActivity : AppCompatActivity() {
                                                 res,
                                                 Toast.LENGTH_SHORT
                                             ).show()
+
                                             val intent =
                                                 Intent(applicationContext, MenuActivity::class.java)
                                             intent.putExtra("userData", res)
                                             intent.putExtra("typeUser", chckBoxChecked.toString())
                                             startActivity(intent)
+                                            binding.emailLogin.text = null
+                                            binding.passwordLogin.text = null
 
                                         }
                                     }.addOnFailureListener {
@@ -138,6 +145,13 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
+
+        }
+
+        binding.loginAdmin.setOnClickListener {
+
+            val intent = Intent(this, AdminActivity::class.java)
+            startActivity(intent)
 
         }
 

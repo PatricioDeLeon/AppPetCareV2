@@ -24,6 +24,9 @@ class VaccinesPet : Fragment() {
     private lateinit var emailUser:String
     private lateinit var idUser:String
     private lateinit var idPet:String
+    private lateinit var namePet:String
+    private lateinit var racePet:String
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
 
         super.onActivityCreated(savedInstanceState)
@@ -31,12 +34,14 @@ class VaccinesPet : Fragment() {
             val id_user = requireArguments().getString("idUser")
             val email_user = requireArguments().getString("emailUser")
             val id_pet = requireArguments().getString("id")
-//            val name_pet = requireArguments().getString("name_pet")
-//            val race_pet = requireArguments().getString("race_pet")
+            val name_pet = requireArguments().getString("name_pet")
+            val race_pet = requireArguments().getString("race_pet")
 
             emailUser = email_user.toString()
             idUser =  id_user.toString()
             idPet = id_pet.toString()
+            namePet = name_pet.toString()
+            racePet = race_pet.toString()
         }
 
         val petsRepo = PetsRepository()
@@ -70,6 +75,10 @@ class VaccinesPet : Fragment() {
             bundle.putString("id_user", idUser)
             bundle.putString("id_pet", idPet)
             bundle.putString("email_user", emailUser)
+            bundle.putString("name_pet", namePet)
+            bundle.putString("race_pet", racePet)
+            Toast.makeText(activity, "$namePet -> $racePet", Toast.LENGTH_SHORT).show()
+
             val goToAddVac = AddVaccine()
             goToAddVac.arguments =  bundle
             val transaction = fragmentManager?.beginTransaction()

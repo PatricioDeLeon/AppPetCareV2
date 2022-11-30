@@ -38,9 +38,6 @@ class UsersRepository {
         }catch(e : Exception){
             return "NON"
         }
-
-//        Thread.sleep(500)
-//        return result
     }
 
     fun updateUser(name:String, email:String, phone:String, id:String):String{

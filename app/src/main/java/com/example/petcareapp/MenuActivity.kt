@@ -1,5 +1,6 @@
 package com.example.petcareapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -27,7 +28,7 @@ class MenuActivity : AppCompatActivity() {
         realTime = FirebaseDatabase.getInstance()
 
         val userUid = firebaseAuth.currentUser?.uid
-        Toast.makeText(applicationContext, userUid, Toast.LENGTH_SHORT).show()
+
 
         val data = getIntent().getExtras()?.getString("userData")
         val typeOfUser = getIntent().getExtras()?.getString("typeUser")
@@ -45,7 +46,6 @@ class MenuActivity : AppCompatActivity() {
             binding = ActivityMenuBinding.inflate(layoutInflater)
             setContentView(binding.root)
 
-            binding.emailUser.text = "Bienvenido/a $email -> #$id"
 
             val bundle = Bundle()
             bundle.putString("email",email.toString() )
@@ -71,7 +71,6 @@ class MenuActivity : AppCompatActivity() {
             binding = ActivityMenuBinding.inflate(layoutInflater)
             setContentView(binding.root)
 
-            binding.emailUser.text = "Bienvenido/a $email -> #$id"
 
             val bundle = Bundle()
             bundle.putString("email",email.toString() )
@@ -85,14 +84,15 @@ class MenuActivity : AppCompatActivity() {
             //  transaction.addToBackStack(null)
             transaction.commit()
 
-
-
-
         }
 
+        binding.btnLogout.setOnClickListener {
+            firebaseAuth.signOut()
+            val intent = Intent(applicationContext,MainActivity::class.java)
+            finish()
+            startActivity(intent)
 
-
-
+        }
 
     }
 

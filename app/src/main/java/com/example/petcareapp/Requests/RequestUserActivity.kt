@@ -43,32 +43,44 @@ class RequestUserActivity : AppCompatActivity() {
 
             if(result.exists()){
 
-                Toast.makeText(applicationContext, "Peticion ya enviada...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Requests already senrt", Toast.LENGTH_SHORT).show()
 
             }else{
 
-                fireStore.collection("veterinarios").get().addOnSuccessListener { result ->
+                realTime.getReference("chats").child(userUid.toString()).get().addOnSuccessListener { chat ->
 
-                    if(result.isEmpty){
-                        Toast.makeText(applicationContext, "Theres no data", Toast.LENGTH_SHORT).show()
+                    if(chat.exists()){
+                        Toast.makeText(applicationContext, "Chat already exists", Toast.LENGTH_SHORT).show()
                     }else{
-                        for (doc in result){
-                            Log.i("Data -> ", " ${doc.id} => ${doc.get("email_vet")}")
-                            val dataToAdd = DataClassVetsFireBase(
-                                doc.id,
-                                doc.get("name_vet").toString(),
-                                doc.get("email_vet").toString(),
-                                doc.get("phone_vet").toString()
-                            )
-                            vetsList.add(dataToAdd)
+
+                        fireStore.collection("veterinarios").get().addOnSuccessListener { result ->
+
+                            if(result.isEmpty){
+                                Toast.makeText(applicationContext, "Theres no data", Toast.LENGTH_SHORT).show()
+                            }else{
+                                for (doc in result){
+                                    Log.i("Data -> ", " ${doc.id} => ${doc.get("email_vet")}")
+                                    val dataToAdd = DataClassVetsFireBase(
+                                        doc.id,
+                                        doc.get("name_vet").toString(),
+                                        doc.get("email_vet").toString(),
+                                        doc.get("phone_vet").toString()
+                                    )
+                                    vetsList.add(dataToAdd)
+                                }
+
+                                initRecyclerView(vetsList)
+                            }
+
+                        }.addOnFailureListener {
+                            Log.i("TAG", "Error al obtener documentos $it")
                         }
 
-                        initRecyclerView(vetsList)
                     }
 
-                }.addOnFailureListener {
-                    Log.i("TAG", "Error al obtener documentos $it")
                 }
+
+
 
             }
 

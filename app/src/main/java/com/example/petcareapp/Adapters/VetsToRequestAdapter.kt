@@ -42,8 +42,11 @@ class VetsToRequestAdapter(private val vetsArray:ArrayList<DataClassVetsFireBase
             btnCancel.setOnClickListener { builder.dismiss() }
             btnAccept.setOnClickListener {
                 val message = builder.findViewById<EditText>(R.id.mesage_request).text.toString()
+                val name_pet = builder.findViewById<EditText>(R.id.name_pet_to_send).text.toString()
+
                 val userUid = firebaseAuth.currentUser?.uid
                 Toast.makeText(holder.itemView.context, "$userUid -> ${item.uid_vet}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(holder.itemView.context, name_pet, Toast.LENGTH_SHORT).show()
 
                 fireStore.collection("usuarios").document(userUid.toString()).get().addOnSuccessListener { document ->
 
@@ -51,7 +54,8 @@ class VetsToRequestAdapter(private val vetsArray:ArrayList<DataClassVetsFireBase
                         "message_req" to message,
                         "name_user" to document.get("name"),
                         "email_user" to document.get("email"),
-                        "uid_vet" to item.uid_vet
+                        "uid_vet" to item.uid_vet,
+                        "name_pet" to name_pet
                     )
 
                     realTime.getReference("requests").child(userUid.toString()).setValue(valueToSave).addOnSuccessListener {
