@@ -19,6 +19,7 @@ class ProfileFragment : Fragment() {
     private lateinit var emailUser:String
     private lateinit var idUser:String
     private lateinit var typeUser:String
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if(arguments != null){

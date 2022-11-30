@@ -53,8 +53,6 @@ class RequestsOfUsersToVetAdapter(private val requestsArray:ArrayList<DataClassR
                     Log.i("Error trying delete req", it.message.toString())
                 }
 
-
-
             }
             btnAccept.setOnClickListener {
 

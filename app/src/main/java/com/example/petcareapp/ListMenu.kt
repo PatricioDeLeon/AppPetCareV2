@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.petcareapp.Api.ApiViewActivity
 import com.example.petcareapp.Chat.MenuChatsUserActivity
 import com.example.petcareapp.PetsScreens.PetsMenuActivity
 import com.example.petcareapp.ProfileScreens.ProfileActivity
@@ -16,8 +17,6 @@ import com.example.petcareapp.VetPackage.ProfileVetActivity
 import com.example.petcareapp.databinding.FragmentListMenuBinding
 
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
 
 import com.example.petcareapp.signin.SignInActivity
 
@@ -138,6 +137,13 @@ class ListMenu : Fragment() {
                 startActivity(intent)
 
             }
+        }
+
+        binding.goToApi.setOnClickListener {
+
+            val intent = Intent(activity, ApiViewActivity::class.java)
+            startActivity(intent)
+
         }
 
 
