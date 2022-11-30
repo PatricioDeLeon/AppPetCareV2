@@ -80,7 +80,7 @@ class RegisterActivity : AppCompatActivity() {
                                     runOnUiThread {
                                         Toast.makeText(
                                             applicationContext,
-                                            "EMIAL ALREDY EXISR",
+                                            "Cuenta de email ya existe",
                                             Toast.LENGTH_SHORT
                                         ).show()
                                     }
@@ -88,7 +88,7 @@ class RegisterActivity : AppCompatActivity() {
                                     runOnUiThread {
                                         Toast.makeText(
                                             applicationContext,
-                                            "Account regitred in server and firebase!!!",
+                                            "Registro exitoso",
                                             Toast.LENGTH_SHORT
                                         ).show()
                                         val intent =
@@ -103,15 +103,22 @@ class RegisterActivity : AppCompatActivity() {
                         Log.i("Error: ", it.message.toString())
                     }
                 } else {
-                    Toast.makeText(applicationContext, "ERROR!!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "ERROR", Toast.LENGTH_SHORT).show()
 
                 }
             }else{
-                Toast.makeText(applicationContext, "Min length password is 6", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Ingresa contraseña con mas de seis caracteres", Toast.LENGTH_SHORT).show()
             }
 
 
         }
+
+        binding.btnLogin.setOnClickListener {
+            val intent =
+            Intent(applicationContext, MainActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     public fun showToast(text:String){

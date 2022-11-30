@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 } else {
-                    Toast.makeText(this, "Somethign is empty", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show()
                 }
 
             } else if (binding.vetCheck.isChecked) {

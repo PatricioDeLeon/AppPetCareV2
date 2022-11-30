@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.petcareapp.Adapters.AdapterRequestsCode.RequestCodeAdapter
+import com.example.petcareapp.Adapters.RequestsOfUsersToVetAdapter
 import com.example.petcareapp.DataClasses.DataClassRequestCode
 import com.example.petcareapp.DataClasses.DataClassVacPet
 import com.example.petcareapp.PetsScreens.AddVaccine

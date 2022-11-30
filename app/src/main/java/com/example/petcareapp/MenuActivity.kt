@@ -86,13 +86,7 @@ class MenuActivity : AppCompatActivity() {
 
         }
 
-        binding.btnLogout.setOnClickListener {
-            firebaseAuth.signOut()
-            val intent = Intent(applicationContext,MainActivity::class.java)
-            finish()
-            startActivity(intent)
 
-        }
 
     }
 
