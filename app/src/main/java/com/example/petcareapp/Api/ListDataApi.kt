@@ -30,7 +30,7 @@ class ListDataApi : Fragment() {
                 image.clear()
                 val repoApi = GetDataApi()
                 val response = repoApi.getDataApi(binding.typePet.text.toString().trim())
-
+                // 1111
 
                 if(response != null){
                     val json = JSONObject(response)
