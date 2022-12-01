@@ -6,7 +6,7 @@
     tools:context=".PetsScreens.PetsMenuFragmnt"
     android:orientation="vertical"
     android:weightSum="10"
-    android:background="@color/lpurple"
+    android:background="@drawable/background_6_pet_care"
     >
 
     <!-- TODO: Update blank fragment layout -->
@@ -16,7 +16,7 @@
         android:layout_weight="1"
         android:text="Vacunas de mis Mascotas "
         android:textSize="30dp"
-        android:background="@color/dpurple"
+        android:background="@color/purple"
         android:gravity="center"
         android:textColor="@color/white"
         />
@@ -34,6 +34,7 @@
             android:layout_height="62dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/dpurple"
             android:text="Agregar"
             />
 

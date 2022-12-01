@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.petcareapp.R
 import com.example.petcareapp.Repositories.UsersRepository
+import com.example.petcareapp.VetPackage.ProfileVetFragment
 import com.example.petcareapp.databinding.FragmentEditUserBinding
 
 
@@ -58,7 +59,6 @@ class EditUserFragment : Fragment() {
 
             }
         }
-
 
     }
 

@@ -7,9 +7,7 @@
     tools:context=".ProfileScreens.ProfileActivity"
     android:orientation="vertical"
     android:weightSum="10"
-    android:gravity="bottom"
-    android:background="@color/lpink"
-    >
+    android:gravity="bottom">
 
     <TextView
         android:layout_width="match_parent"
@@ -17,8 +15,8 @@
         android:text="Perfil Vet"
         android:textSize="40dp"
         android:gravity="center"
-        android:textColor="@color/white"
-        android:background="@color/dpink"
+        android:textColor="@color/grey"
+        android:background="#E2FBF4"
         android:layout_weight="1" />
 
     <FrameLayout
@@ -28,5 +26,6 @@
         android:layout_weight="9"
 
         />
+
 
 </LinearLayout>

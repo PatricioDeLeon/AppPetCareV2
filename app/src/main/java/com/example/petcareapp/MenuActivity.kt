@@ -3,14 +3,12 @@ package com.example.petcareapp
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.petcareapp.databinding.ActivityMenuBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import org.json.JSONArray
-import org.json.JSONObject
 
 
 class MenuActivity : AppCompatActivity() {
@@ -86,7 +84,12 @@ class MenuActivity : AppCompatActivity() {
 
         }
 
+        binding.btnLogout.setOnClickListener {
 
+            val intent = Intent(this@MenuActivity, MainActivity::class.java)
+            startActivity(intent)
+
+        }
 
     }
 

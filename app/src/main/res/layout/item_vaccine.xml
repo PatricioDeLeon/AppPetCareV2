@@ -4,15 +4,13 @@
     android:layout_height="190dp"
     android:orientation="vertical"
     android:weightSum="10"
-    android:background="@color/dpurple"
+    android:background="@color/purple"
     >
 
     <androidx.cardview.widget.CardView
-        android:layout_width="280dp"
-        android:layout_height="180dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_margin="10dp"
-        android:layout_gravity="center"
-
         >
 
         <LinearLayout
@@ -35,31 +33,36 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:hint="name"
-                    android:layout_weight="2" />
+                    android:layout_weight="2"
+                    android:layout_marginStart="6dp"/>
                 <TextView
                     android:id="@+id/race_pet"
                     android:hint="race"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2" />
+                    android:layout_weight="2"
+                    android:layout_marginStart="6dp"/>
                 <TextView
                     android:hint="vacuna"
                     android:id="@+id/vaccine_vac"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2" />
+                    android:layout_weight="2"
+                    android:layout_marginStart="6dp"/>
                 <TextView
                     android:hint="mensaje"
                     android:id="@+id/message_vac"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2" />
+                    android:layout_weight="2"
+                    android:layout_marginStart="6dp"/>
                 <TextView
                     android:hint="fecha"
                     android:id="@+id/date"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2" />
+                    android:layout_weight="2"
+                    android:layout_marginStart="6dp"/>
 
 
             </LinearLayout>

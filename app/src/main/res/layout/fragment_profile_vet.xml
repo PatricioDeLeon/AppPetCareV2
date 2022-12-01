@@ -1,199 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileScreens.ProfileFragment"
-    android:orientation="vertical"
-    android:background="@color/lpink"
-    android:weightSum="20">
+    android:background="@drawable/background_2_pet_care"
+    tools:context=".ProfileScreens.ProfileFragment">
 
-
+    <TextView
+        android:id="@+id/titleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="180dp"
+        tools:layout_editor_absoluteY="140dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="7"
-        android:weightSum="10"
-        android:layout_margin="10dp"
+        android:id="@+id/linearLayout"
         android:orientation="vertical"
-        android:background="@color/dpink"
-
-        >
-
+        android:padding="10dp"
+        android:background="@drawable/white_background2"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleName">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:weightSum="10"
-            android:orientation="horizontal"
-            >
-
+            android:orientation="horizontal">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/name_vet_label"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:hint="Nombre ->"
-                android:gravity="center"
-                android:layout_marginTop="0dp"
-                android:textColor="@color/cardview_light_background"
-                />
+                android:layout_weight="1"
+                android:text="Nombre"
+                android:textStyle="bold"
+                android:textColor="@color/pink"
+                android:textSize="18sp"/>
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/name_vet_view"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:hint="nombre"
-                android:gravity="center"
-                android:layout_marginTop="0dp"
-                android:textColor="@color/cardview_light_background"
-                />
-
+                android:text="nombre"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/grey"
+                android:textSize="18sp"/>
         </LinearLayout>
-
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:alpha="0.5"
+            android:background="@color/pink"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:weightSum="10"
-            android:orientation="horizontal"
-            >
-
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:orientation="horizontal">
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/email_vet_label"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:hint="Email ->"
-                android:gravity="center"
-                android:layout_marginTop="0dp"
-                android:textColor="@color/cardview_light_background"
-                />
+                android:layout_weight="1"
+                android:text="Email"
+                android:textStyle="bold"
+                android:textColor="@color/pink"
+                android:textSize="18sp"/>
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/email_vet_view"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:hint="email"
-                android:gravity="center"
-                android:layout_marginTop="0dp"
-                android:textColor="@color/cardview_light_background"
-                />
-
+                android:text="email"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/grey"
+                android:textSize="18sp"/>
         </LinearLayout>
-
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:alpha="0.5"
+            android:background="@color/pink"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:weightSum="10"
-            android:orientation="horizontal"
-            >
-
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:orientation="horizontal">
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/cedula_vet_label"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:hint="Cedula ->"
-                android:gravity="center"
-                android:layout_marginTop="0dp"
-                android:textColor="@color/cardview_light_background"
-                />
+                android:layout_weight="1"
+                android:text="Cédula"
+                android:textStyle="bold"
+                android:textColor="@color/pink"
+                android:textSize="18sp"/>
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/cedula_vet_view"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:hint="cedula"
-                android:gravity="center"
-                android:layout_marginTop="0dp"
-                android:textColor="@color/cardview_light_background"
-                />
-
+                android:text="cedula"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/grey"
+                android:textSize="18sp"/>
         </LinearLayout>
-
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:alpha="0.5"
+            android:background="@color/pink"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:weightSum="10"
-            android:orientation="horizontal"
-            >
-
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:orientation="horizontal">
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/phone_vet_label"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:hint="Telefono ->"
-                android:gravity="center"
-                android:layout_marginTop="0dp"
-                android:textColor="@color/cardview_light_background"
-                />
+                android:layout_weight="1"
+                android:text="Teléfono"
+                android:textStyle="bold"
+                android:textColor="@color/pink"
+                android:textSize="18sp"/>
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/phone_vet_view"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:hint="Telefono"
-                android:gravity="center"
-                android:layout_marginTop="0dp"
-                android:textColor="@color/cardview_light_background"
-                />
-
+                android:text="telefono"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/grey"
+                android:textSize="18sp"/>
         </LinearLayout>
-
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:alpha="0.5"
+            android:background="@color/pink"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:weightSum="10"
-            android:orientation="horizontal"
-            >
-
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:orientation="horizontal">
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/id_vet_label"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:hint="Id ->"
-                android:gravity="center"
-                android:layout_marginTop="0dp"
-                android:textColor="@color/cardview_light_background"
-                />
+                android:layout_weight="1"
+                android:text="ID"
+                android:textStyle="bold"
+                android:textColor="@color/pink"
+                android:textSize="18sp"/>
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/id_vet_view"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:hint="id"
-                android:gravity="center"
-                android:layout_marginTop="0dp"
-                android:textColor="@color/cardview_light_background"
-                />
-
+                android:text="id"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/grey"
+                android:textSize="18sp"/>
         </LinearLayout>
-
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_weight="2"
-        android:layout_marginTop="20dp"
-
-        >
-        <Button
-            android:id="@+id/go_to_edit_vet"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:backgroundTint="@color/ddpink"
-            android:layout_marginStart="10dp"
-            android:text="Editar"
-            />
-
-    </LinearLayout>
-</LinearLayout>
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:id="@+id/go_to_edit_vet"
+        android:gravity="center"
+        android:text="Editar perfil"
+        android:textSize="18sp"
+        android:backgroundTint="#2BC9CF"
+        app:cornerRadius = "20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/linearLayout"
+        app:layout_constraintStart_toStartOf="@id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
