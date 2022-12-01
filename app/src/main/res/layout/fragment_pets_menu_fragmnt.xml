@@ -6,7 +6,7 @@
     tools:context=".PetsScreens.PetsMenuFragmnt"
     android:orientation="vertical"
     android:weightSum="10"
-    android:background="@color/lgreen"
+    android:background="@drawable/background_6_pet_care"
     >
 
     <!-- TODO: Update blank fragment layout -->
@@ -17,7 +17,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="Mis Mascotas"
-        android:background="@color/dgreen"
+        android:background="@color/purple"
         android:textColor="@color/white"
         android:textSize="30dp" />
 
@@ -32,7 +32,7 @@
             android:id="@+id/btn_register_pet"
             android:layout_width="150dp"
             android:layout_height="55dp"
-            android:backgroundTint="@color/ddgreen"
+            android:backgroundTint="@color/dpurple"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:layout_marginEnd="20dp"

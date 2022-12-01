@@ -93,7 +93,7 @@ class ListMenu : Fragment() {
 
             if(typeOfUser == "vet"){
 
-                Toast.makeText(activity, "Vet profile", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "Perfil de veterinario", Toast.LENGTH_SHORT).show()
             }
 
         }

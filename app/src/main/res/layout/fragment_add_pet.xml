@@ -1,73 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PetsScreens.addPet"
-    android:weightSum="10"
     android:orientation="vertical"
-    android:background="@color/lpurple"
-    >
-
-    <!-- TODO: Update blank fragment layout -->
+    android:gravity="center"
+    android:background="@drawable/background_5_pet_care"
+    tools:context=".PetsScreens.addPet">
     <TextView
-
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:text="Agregar mascota"
         android:textSize="30dp"
         android:gravity="center"
         android:textColor="@color/white"
-        android:background="@color/dpurple"
-         />
+        android:background="@color/purple"
+        />
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
 
-        <EditText
-            android:id="@+id/name_pet"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="14dp"
-            android:hint="Nombre"
-            android:layout_weight="1" />
-
-        <EditText
-            android:id="@+id/age_pet"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:hint="Edad"
-            android:layout_weight="1" />
-
-        <EditText
-            android:id="@+id/race_pet"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:hint="Raza"
-            android:layout_weight="1" />
-        <EditText
-            android:id="@+id/weight_pet"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:hint="Peso"
-            android:layout_weight="1" />
-        <EditText
-            android:id="@+id/additonal_pet"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:hint="Inf.Adicional"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/btn_add_pet"
-            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Agregar Mascota"
-            />
+            android:padding="24dp"
+            android:background="@drawable/custom_edittext">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/name_pet"
+                android:inputType="text"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="15dp"
+                android:padding="8dp"
+                android:hint="Nombre"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/age_pet"
+                android:inputType="number"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Edad"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/race_pet"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Raza"
+                android:inputType="text"
+                android:textColor="@color/black"/>
 
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/weight_pet"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Peso"
+                android:inputType="text"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/additonal_pet"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Información adicional"
+                android:inputType="text"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_add_pet"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="3dp"
+        android:backgroundTint="#2BC9CF"
+        android:text="Agregar mascota"
+        android:textSize="18sp"
+        app:cornerRadius="20dp" />
 
 
 </LinearLayout>

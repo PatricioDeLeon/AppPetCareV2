@@ -97,7 +97,11 @@ class RegisterVet : AppCompatActivity() {
         }
 
 
-
+        binding.btnLogin.setOnClickListener {
+            val intent =
+                Intent(applicationContext, MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }

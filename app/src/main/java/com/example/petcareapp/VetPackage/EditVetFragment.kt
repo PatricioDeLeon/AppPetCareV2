@@ -42,7 +42,7 @@ class EditVetFragment : Fragment() {
 
                 if(result == "true"){
 
-                    Toast.makeText(activity, "Data Updated", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "Información actualizada", Toast.LENGTH_SHORT).show()
                     val bundle = Bundle()
                     bundle.putString("id", idUser)
                     val goToProfile = ProfileVetFragment()
